@@ -285,6 +285,21 @@ font-size: 2rem
   padding-top: 1rem;
 }
 
+.client-header-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.2rem;
+}
+
+.client-header-logo {
+  height: 6.2rem; /* 2 x 3.1rem header line height */
+  width: auto;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
 .client-header.col-60 {
   width: 40%;
   margin-left: 0;
@@ -300,6 +315,9 @@ font-size: 2rem
     text-align: left;
     padding-right: 0;
   }
+  .client-header-logo-wrap {
+    justify-content: flex-start;
+  }
 }
 
 .client-header.col-60 h2 {
@@ -308,6 +326,8 @@ font-size: 2rem
   margin: 0 0 0.5em 0;
   color: #d9ca7e;
   letter-spacing: 0.01em;
+  line-height: 1.05;
+  display: block;
 }
 
 .section .description h3 {
