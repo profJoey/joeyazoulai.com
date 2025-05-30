@@ -33,6 +33,7 @@ h2 {
 
 .hero-section {
   margin: 0 8vw;
+  max-width: 1000px;
   height: 70vh;
   display: flex;
   justify-content: center;
@@ -77,6 +78,10 @@ h2 {
   margin: 0 0 1rem 0;
   color: #d9ca7e;
   font-family: "Mooli", sans-serif;
+}
+
+.hero-tagline span {
+font-size: 2rem
 }
 
 .hero-description {
