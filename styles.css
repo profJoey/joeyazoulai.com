@@ -28,7 +28,7 @@ h2 {
   font-family: "Mooli", sans-serif;
   font-weight: 900;
   font-style: normal;
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 .hero-section {
@@ -283,6 +283,40 @@ font-size: 2rem
 
 .header-icon {
   padding-top: 1rem;
+}
+
+.client-header.col-60 {
+  width: 40%;
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+  display: block;
+  padding-bottom: 0.5em;
+}
+
+@media (max-width: 900px) {
+  .client-header.col-60 {
+    width: 100%;
+    text-align: left;
+    padding-right: 0;
+  }
+}
+
+.client-header.col-60 h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 0 0 0.5em 0;
+  color: #d9ca7e;
+  letter-spacing: 0.01em;
+}
+
+.section .description h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0 0 0.5em 0;
+  color: #fff;
+  letter-spacing: 0.01em;
+  text-align: left;
 }
 
 @media (max-width: 600px) {
