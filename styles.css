@@ -126,6 +126,7 @@ font-size: 2rem
 }
 
 .video-section,
+.image-section,
 .info-section {
   min-width: 0;
   display: flex;
@@ -149,6 +150,18 @@ font-size: 2rem
   overflow: hidden;
   border: 1px solid #d9ca7e;
   border-radius: 8px;
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border: 1px solid #d9ca7e;
+  border-radius: 8px;  
+  padding: 0.5rem;
 }
 
 .aspect-ratio-4-5 {
@@ -330,6 +343,11 @@ font-size: 2rem
   margin: 0 0 0.5em 0;
   letter-spacing: 0.01em;
   text-align: left;
+}
+
+.image-sample {
+  height: 100%;
+  width: auto;
 }
 
 @media (max-width: 600px) {
