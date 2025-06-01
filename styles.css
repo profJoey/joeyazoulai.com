@@ -38,7 +38,7 @@ h2 {
 .hero-section {
   margin: 0 8vw;
   max-width: 1000px;
-  height: 70vh;
+  height: calc(100vh - 6rem);
   display: flex;
   justify-content: center;
   align-items: center; /* Children fill the height */
