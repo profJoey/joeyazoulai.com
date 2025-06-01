@@ -13,6 +13,10 @@ body {
   width: 100vw;
 }
 
+p {
+  line-height: 1.25;
+}
+
 .main-content, .hero-section, .logo-section, .work-samples, .site-footer {
   width: 100%;
   /* max-width: 1000px; */
@@ -289,9 +293,13 @@ section.client-testimonial {
   box-sizing: border-box;
 }
 
+.client-header {
+  margin-bottom: 3rem;
+}
+
 .client-header-logo-wrap {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-end;
   gap: 1.2rem;
 }
@@ -305,7 +313,8 @@ section.client-testimonial {
 }
 
 .client-header.col-60 {
-  width: 40%;
+  width: 100%;
+  max-width: 800px;
   margin-left: 0;
   margin-right: auto;
   text-align: left;
@@ -327,7 +336,7 @@ section.client-testimonial {
 .client-header.col-60 h2 {
   font-size: 3rem;
   font-weight: 600;
-  margin: 0 0 0.5em 0;
+  margin: 0;
   color: #d9ca7e;
   letter-spacing: 0.01em;
   line-height: 1.05;
