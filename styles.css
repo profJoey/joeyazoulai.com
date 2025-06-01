@@ -36,19 +36,32 @@ h2 {
 }
 
 .hero-section {
-  margin: 0 8vw;
-  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 5fr;
+  grid-template-areas:
+    "logo logo"
+    "image content";
   height: calc(100vh - 6rem);
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Children fill the height */
-  margin-bottom: 1rem;
+  max-width: 1000px;
+  margin: 0 8vw 1rem 8vw;
   box-sizing: border-box;
   overflow: hidden;
+  align-items: stretch;
+}
+
+.logo-carousel {
+  grid-area: logo;
+  align-self: stretch;
+  justify-self: stretch;
+  margin-bottom: 0;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
 }
 
 .hero-image-wrapper {
-  flex: 1 1 0;
+  grid-area: image;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,7 +81,7 @@ h2 {
 }
 
 .hero-content {
-  flex: 1 1 0;
+  grid-area: content;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,6 +89,7 @@ h2 {
   padding: 1rem;
   min-width: 0;
 }
+
 .hero-tagline {
   font-size: 3rem;
   font-weight: 100;
@@ -441,5 +455,26 @@ section.client-testimonial {
   .logo-img {
     height: clamp(24px, 8vw, 40px);
     width: clamp(50px, 20vw, 80px);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "logo"
+      "image"
+      "content";
+    height: auto;
+    min-height: 0;
+  }
+  .hero-image-wrapper {
+    margin-right: 0;
+  }
+  .hero-content {
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem 0;
   }
 }
