@@ -57,41 +57,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
   allIframes.forEach(iframe => observer.observe(iframe));
 
-  // Logo carousel logic
-  const track = document.querySelector('.logo-track');
-  const logos = Array.from(document.querySelectorAll('.logo-img'));
-  const visibleCount = 3;
-  let currentIndex = 0;
-  let intervalId;
-
-  function updateCarousel() {
-    const logoWidth = logos[0]?.offsetWidth || 120;
-    const gap = parseFloat(getComputedStyle(logos[0]).marginRight) || 8;
-    const moveX = (logoWidth + gap) * currentIndex;
-    track.style.transform = `translateX(-${moveX}px)`;
-  }
-
-  function nextSlide() {
-    currentIndex++;
-    if (currentIndex > logos.length - visibleCount) {
-      currentIndex = 0;
-    }
-    updateCarousel();
-  }
-
-  function startCarousel() {
-    intervalId = setInterval(nextSlide, 2200);
-  }
-
-  function stopCarousel() {
-    clearInterval(intervalId);
-  }
-
-  if (track && logos.length > visibleCount) {
-    updateCarousel();
-    startCarousel();
-    track.addEventListener('mouseenter', stopCarousel);
-    track.addEventListener('mouseleave', startCarousel);
-    window.addEventListener('resize', updateCarousel);
-  }
+  // Logo carousel logic removed for static display
 });
