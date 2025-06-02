@@ -5,7 +5,7 @@ body {
   justify-content: flex-start;
   font-family: "Arial", sans-serif;
   margin: 0;
-  padding: 3rem;
+  padding: 0 3rem;
   box-sizing: border-box;
   color: #fff;
   font-size: 16px;
@@ -47,11 +47,10 @@ h2 {
     "logo logo"
     "image content"
     "portfolio portfolio";
-  height: calc(100vh - 6rem); /* Full viewport height minus header/footer */
-  width: 80vw;
-  max-width: 1000px;
-  background: #111;
-  border-radius: 16px;
+  height: 100vh;
+  width: 100vw;
+  max-width: 800px;
+  background: transparent;
   overflow: hidden;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
 }
@@ -62,7 +61,6 @@ h2 {
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  background: #181818;
 }
 
 .hero-image-wrapper {
@@ -72,7 +70,6 @@ h2 {
   justify-content: center;
   height: 100%;
   overflow: hidden;
-  background: #222;
 }
 .hero-image {
   max-height: 100%;
@@ -81,7 +78,6 @@ h2 {
   height: auto;
   object-fit: contain;
   border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
   display: block;
 }
 
@@ -92,7 +88,6 @@ h2 {
   justify-content: center;
   align-items: flex-start;
   padding: 2rem;
-  background: #181818;
 }
 
 .portfolio-scroll {
