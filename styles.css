@@ -17,7 +17,7 @@ p {
   line-height: 1.25;
 }
 
-.main-content, .hero-section, .logo-section, .work-samples, .site-footer {
+.main-content, .work-samples, .site-footer {
   width: 100%;
   /* max-width: 1000px; */
   box-sizing: border-box;
@@ -35,63 +35,68 @@ h2 {
   font-size: 4rem;
 }
 
-.hero-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 5fr;
-  grid-template-areas:
-    "logo logo"
-    "image content";
-  height: calc(100vh - 6rem);
-  max-width: 1000px;
-  margin: 0 8vw 1rem 8vw;
-  box-sizing: border-box;
-  overflow: hidden;
-  align-items: stretch;
-}
+/*Hero Section START*/
 
-.logo-carousel {
-  grid-area: logo;
-  align-self: stretch;
-  justify-self: stretch;
-  margin-bottom: 0;
-  min-height: 64px;
-  display: flex;
-  align-items: center;
-}
+    .hero-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 4fr 1fr; /* 1:4:1 ratio */
+      grid-template-areas:
+        "logo logo"
+        "image content"
+        "portfolio portfolio";
+      height: calc(100vh - 6rem); /* Full viewport height minus header/footer */
+      width: 80vw;
+      max-width: 1000px;
+      background: #111;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    }
 
-.hero-image-wrapper {
-  grid-area: image;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-  height: 100%;
-  margin-right: 1rem;
-}
+    .hero-image-wrapper {
+      grid-area: image;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      overflow: hidden;
+      background: #222;
+    }
+    .hero-image {
+      max-height: 100%;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+      display: block;
+    }
 
-.hero-image {
-  height: 100%; /* Fills the wrapper vertically */
-  width: auto; /* Maintains aspect ratio */
-  max-width: 100%; /* Prevents horizontal overflow */
-  object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
-  display: block;
-}
 
-.hero-content {
-  grid-area: content;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 1rem;
-  min-width: 0;
-}
+        .hero-content {
+      grid-area: content;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 2rem;
+      background: #181818;
+      height: 100%;
+    }
+
+    .portfolio-scroll {
+      grid-area: portfolio;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #333;
+    }
+
 
 .hero-tagline {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 100;
   margin: 0 0 1rem 0;
   color: #d9ca7e;
@@ -103,13 +108,14 @@ font-size: 2rem
 }
 
 .hero-description {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #fff;
 }
 
 .hero-description span {
   color: #d9ca7e;
 }
+/* Hero Section END */
 
 .section {
   display: grid;
