@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
       currentPlayingIdx = newIdx;
     }
 
-    // Opacity animation for all videos: in-view if at least 90% visible
+    // Opacity animation for all videos: in-view if at least 80% visible
     entries.forEach(entry => {
       if (entry.intersectionRatio >= 0.8) {
         entry.target.classList.add('in-view');
