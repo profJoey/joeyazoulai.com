@@ -130,7 +130,7 @@ h2 {
 }
 
 .hero-description {
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #fff;
 }
 
@@ -193,6 +193,7 @@ section.client-testimonial {
 
 .text-section {
   min-width: 0;
+  max-width: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -233,16 +234,50 @@ section.client-testimonial {
 .portfolio-heading {
   text-align: center;
   font-family: "Mooli", sans-serif;
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: 700;
   /* margin: 0 0 0.25rem 0; */
   margin: 0;
-  color: #d9ca7e;
+  color: #fff;
   position: relative;
   z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
+}
+
+.message-me {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  font-size: 1rem;
+  color: #d9ca7e;
+  font-family: "Mooli", sans-serif;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.message-me a {
+  display: block;
+}
+
+.header-icon {
+  margin-right: 1rem;
+}
+
+a.portfolio-heading,
+.portfolio-scroll a.portfolio-heading,
+body a.portfolio-heading,
+a.portfolio-heading:link,
+a.portfolio-heading:visited,
+a.portfolio-heading:hover,
+a.portfolio-heading:active {
+    text-decoration: none !important;
+    color: #FFF;
+    border-bottom: none;
+    -webkit-text-decoration: none;
+    -moz-text-decoration: none;
 }
 
 .portfolio-arrow {
@@ -369,8 +404,16 @@ section.client-testimonial {
   gap: 3rem;
 }
 
+.steps {
+  color: #d9ca7e;
+  text-transform: uppercase;
+  font-family: "Mooli", sans-serif;
+  font-weight: 900;
+  line-height: 2rem; 
+}
+
 .client-header-logo {
-  height: 6.2rem; /* 2 x 3.1rem header line height */
+  height: 10rem; /* 2 x 3.1rem header line height */
   width: auto;
   max-height: 100%;
   object-fit: contain;
