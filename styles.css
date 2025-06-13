@@ -155,8 +155,16 @@ h2 {
   grid-template-columns: 2fr 3fr;
 }
 
+.section.cols-2-70-30 {
+  grid-template-columns: 7fr 3fr;
+}
+
 .section.cols-2 {
   grid-template-columns: 1fr 1fr;
+}
+
+.section.cols-3 {
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .section.cols-3-50-25-25 {
@@ -411,6 +419,18 @@ section.client-testimonial {
 .image-sample {
   height: 100%;
   width: auto;
+}
+
+.linkedin-wrapper {
+  width: 100%;
+  max-width: 504px;
+  margin: 0 auto;
+  height: auto;
+}
+
+.linkedin-wrapper iframe, .linkedin-wrapper blockquote {
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 600px) {
