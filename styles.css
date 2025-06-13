@@ -160,7 +160,19 @@ h2 {
 }
 
 .section.cols-2 {
-  grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, auto));
+  gap: 4rem;
+  justify-content: center;
+  align-items: start;
+  margin: 0 auto 6rem;
+}
+
+/* Make direct children of grid cells center horizontally */
+.section.cols-2 > * {
+  justify-self: center;
+  width: 100%;
+  max-width: 500px;
 }
 
 .section.cols-3 {
@@ -193,12 +205,12 @@ section.client-testimonial {
 
 .text-section {
   min-width: 0;
-  max-width: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 1 1 40%;
 }
+
 
 .media-wrapper {
   position: relative;
@@ -457,6 +469,10 @@ a.portfolio-heading:active {
   margin: 0 0 0.5em 0;
   letter-spacing: 0.01em;
   text-align: left;
+}
+
+.description {
+    max-width: 400px;
 }
 
 .image-sample {
