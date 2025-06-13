@@ -421,45 +421,44 @@ section.client-testimonial {
   width: auto;
 }
 
-.linkedin-wrapper {
-  width: 100%;
+.linkedin-wrapper,
+.instagram-wrapper,
+.facebook-wrapper {
+  width: 80%;  /* Set to 80% width */
   max-width: 504px;
   margin: 0 auto;
   height: 600px;  /* Fixed height */
   overflow-y: auto;  /* Enable vertical scrolling */
-  border: 1px solid #d9ca7e;
+  border: 1px solid #d9ca7e;  /* Consistent yellow border */
   border-radius: 8px;
-}
-
-.instagram-wrapper {
-  width: 100%;
-  max-width: 504px;
-  margin: 0 auto;
-  height: 600px;  /* Fixed height */
-  overflow-y: auto;  /* Enable vertical scrolling */
-  border: 1px solid #d9ca7e;
-  border-radius: 8px;
+  display: flex;  /* Added for better iframe centering */
+  align-items: center;  /* Center content vertically */
+  justify-content: center;  /* Center content horizontally */
 }
 
 .linkedin-wrapper iframe,
 .instagram-wrapper iframe,
-.instagram-wrapper blockquote {
+.instagram-wrapper blockquote,
+.facebook-wrapper iframe {
   width: 100%;
-  height: auto;
+  height: 100%;  /* Changed from auto to 100% */
   min-height: 600px;
   border: none;
   background: #fff;
+  border-radius: 8px;  /* Consistent border radius */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .instagram-wrapper::-webkit-scrollbar,
-.linkedin-wrapper::-webkit-scrollbar {
+.linkedin-wrapper::-webkit-scrollbar,
+.facebook-wrapper::-webkit-scrollbar {
   display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .instagram-wrapper,
-.linkedin-wrapper {
+.linkedin-wrapper,
+.facebook-wrapper {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
