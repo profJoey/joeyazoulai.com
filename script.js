@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   // Create SVG icons for mute/unmute
-  const muteIcon = `<svg viewBox="0 0 24 24"><path d="M12 4L6 10H3v4h3l6 6V4zm5.03 4.71l1.41 1.41c.78.78 1.17 1.81 1.17 2.83 0 1.02-.39 2.05-1.17 2.83l-1.41 1.41c1.55-1.55 1.55-4.1 0-5.66zm2.83-2.83l1.41 1.41C23.11 9.13 24 11.51 24 14c0 2.49-.89 4.87-2.73 6.71l-1.41-1.41c1.45-1.45 2.17-3.35 2.17-5.3 0-1.95-.72-3.85-2.17-5.3z"/></svg>`;
+  const muteIcon = `<svg viewBox="0 0 24 24"><path d="M12 4L6 10H3v4h3l6 6V4zm5.03 4.71l1.41 1.41c.78.78 1.81 1.17 2.83 1.17 1.02 0 2.05-.39 2.83-1.17l1.41-1.41c-1.55-1.55-4.1-1.55-5.66 0zm2.83-2.83l1.41 1.41C23.11 9.13 24 11.51 24 14c0 2.49-.89 4.87-2.73 6.71l-1.41-1.41C21.45 18.55 22.17 16.65 22.17 14.7c0-1.95-.72-3.85-2.17-5.3z"/></svg>`;
   const unmuteIcon = `<svg viewBox="0 0 24 24"><path d="M3 10v4h3l6 6V4L6 10H3zm13.59 6.41L15 14.83l-2.59 2.59L11 16.01l2.59-2.59L11 10.83l1.41-1.41L15 12.01l2.59-2.59L19 10.83l-2.59 2.59L19 16.01l-1.41 1.41z"/></svg>`;
   
   // Only select iframes with both video-embed and autoplay-video for autoplay logic
@@ -43,6 +43,17 @@ document.addEventListener("DOMContentLoaded", function() {
   // Set initial opacity for all videos
   allIframes.forEach(iframe => iframe.classList.remove('in-view'));
 
+  // Utility to update mute button UI
+  function updateMuteButtonUI(player, muteButton) {
+    player.getMuted().then(isMuted => {
+      if (isMuted) {
+        muteButton.innerHTML = `${unmuteIcon} <span>Unmute</span>`;
+      } else {
+        muteButton.innerHTML = `${muteIcon} <span>Mute</span>`;
+      }
+    });
+  }
+
   // Initialize first video immediately
   if (autoplayIframes.length > 0) {
     const firstAutoplay = autoplayIframes[0];
@@ -58,25 +69,26 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log('First video playing');
         firstAutoplay.classList.add('in-view');
         currentPlayingIdx = idx;
-        
         // Add mute button click handler
         const muteButton = firstAutoplay.parentElement.querySelector('.mute-button');
-        if (muteButton) {      muteButton.addEventListener('click', async () => {
-        try {
-          const muted = await players[idx].getMuted();
-          if (muted) {
-            await players[idx].setMuted(false);
-            await players[idx].setVolume(1.0);
-            muteButton.innerHTML = `${muteIcon} <span>Mute</span>`;
-          } else {
-            await players[idx].setMuted(true);
-            await players[idx].setVolume(0);
-            muteButton.innerHTML = `${unmuteIcon} <span>Unmute</span>`;
-          }
-        } catch (error) {
-          console.error('Error toggling mute state:', error);
-        }
-      });
+        if (muteButton) {
+          muteButton.addEventListener('click', async () => {
+            try {
+              const muted = await players[idx].getMuted();
+              if (muted) {
+                await players[idx].setMuted(false);
+                await players[idx].setVolume(1.0);
+              } else {
+                await players[idx].setMuted(true);
+                await players[idx].setVolume(0);
+              }
+              updateMuteButtonUI(players[idx], muteButton);
+            } catch (error) {
+              console.error('Error toggling mute state:', error);
+            }
+          });
+          // Initial sync
+          updateMuteButtonUI(players[idx], muteButton);
         }
       }).catch(error => {
         console.error('Error initializing first video:', error);
@@ -98,7 +110,10 @@ document.addEventListener("DOMContentLoaded", function() {
       // Pause and mute the old autoplay video
       if (currentPlayingIdx !== null) {
         players[currentPlayingIdx].pause().then(() => {
-          players[currentPlayingIdx].setMuted(true);
+          players[currentPlayingIdx].setMuted(true).then(() => {
+            const muteButton = allIframes[currentPlayingIdx].parentElement.querySelector('.mute-button');
+            if (muteButton) updateMuteButtonUI(players[currentPlayingIdx], muteButton);
+          });
         }).catch(() => {});
         allIframes[currentPlayingIdx].classList.remove('in-view');
       }
@@ -118,7 +133,10 @@ document.addEventListener("DOMContentLoaded", function() {
         // Mute videos when they leave viewport
         if (idx !== -1) {
           players[idx].pause().then(() => {
-            players[idx].setMuted(true);
+            players[idx].setMuted(true).then(() => {
+              const muteButton = allIframes[idx].parentElement.querySelector('.mute-button');
+              if (muteButton) updateMuteButtonUI(players[idx], muteButton);
+            });
           }).catch(() => {});
         }
       }
@@ -131,7 +149,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   allIframes.forEach((iframe, index) => {
     observer.observe(iframe);
-    
     // Add mute button click handler for all videos
     const muteButton = iframe.parentElement.querySelector('.mute-button');
     if (muteButton) {
@@ -141,16 +158,17 @@ document.addEventListener("DOMContentLoaded", function() {
           if (muted) {
             await players[index].setMuted(false);
             await players[index].setVolume(1.0);
-            muteButton.innerHTML = `${muteIcon} <span>Mute</span>`;
           } else {
             await players[index].setMuted(true);
             await players[index].setVolume(0);
-            muteButton.innerHTML = `${unmuteIcon} <span>Unmute</span>`;
           }
+          updateMuteButtonUI(players[index], muteButton);
         } catch (error) {
           console.error('Error toggling mute state:', error);
         }
       });
+      // Initial sync
+      updateMuteButtonUI(players[index], muteButton);
     }
   });
 
