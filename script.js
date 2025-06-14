@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
       let src = new URL(iframe.src);
       src.searchParams.set('autoplay', '1');
       src.searchParams.set('muted', '1');
-      src.searchParams.set('controls', '1');
+      src.searchParams.set('controls', '0');
       iframe.src = src.toString();
     }
 
