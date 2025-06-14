@@ -7,7 +7,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const options = {
       muted: true,
       loop: true,
-      autopause: false
+      autopause: false,
+      background: true,
+      playsinline: true,
+      controls: false
     };
 
     // Modify URL parameters for autoplay videos
