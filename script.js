@@ -30,12 +30,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     if (newIdx !== currentPlayingIdx && newIdx !== null) {
-      // Pause the old autoplay video
+      // Pause and mute the old autoplay video
       if (currentPlayingIdx !== null) {
-        players[currentPlayingIdx].pause();
+        players[currentPlayingIdx].pause().then(() => {
+          players[currentPlayingIdx].setMuted(true);
+        }).catch(() => {});
         allIframes[currentPlayingIdx].classList.remove('in-view');
       }
-      // Play the new one
+      // Play the new one (already muted from initialization)
       players[newIdx].play().catch(() => {});
       allIframes[newIdx].classList.add('in-view');
       currentPlayingIdx = newIdx;
@@ -43,10 +45,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Opacity animation for all videos: in-view if at least 80% visible
     entries.forEach(entry => {
+      const idx = allIframes.indexOf(entry.target);
       if (entry.intersectionRatio >= 0.8) {
         entry.target.classList.add('in-view');
       } else {
         entry.target.classList.remove('in-view');
+        // Mute videos when they leave viewport
+        if (idx !== -1) {
+          players[idx].pause().then(() => {
+            players[idx].setMuted(true);
+          }).catch(() => {});
+        }
       }
     });
   }
