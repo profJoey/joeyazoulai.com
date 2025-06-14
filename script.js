@@ -8,6 +8,37 @@ document.addEventListener("DOMContentLoaded", function() {
   // Set initial opacity for all videos
   allIframes.forEach(iframe => iframe.classList.remove('in-view'));
 
+  // Add mute button functionality
+  document.querySelectorAll('.mute-button').forEach((button, index) => {
+    button.addEventListener('click', () => {
+      const muteIcon = button.querySelector('.mute-icon');
+      const unmuteIcon = button.querySelector('.unmute-icon');
+      
+      players[index].getMuted().then(muted => {
+        if (muted) {
+          players[index].setMuted(false);
+          muteIcon.style.display = 'none';
+          unmuteIcon.style.display = 'block';
+        } else {
+          players[index].setMuted(true);
+          muteIcon.style.display = 'block';
+          unmuteIcon.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Function to update mute button state
+  function updateMuteButton(index, muted) {
+    const button = allIframes[index].parentElement.querySelector('.mute-button');
+    if (button) {
+      const muteIcon = button.querySelector('.mute-icon');
+      const unmuteIcon = button.querySelector('.unmute-icon');
+      muteIcon.style.display = muted ? 'block' : 'none';
+      unmuteIcon.style.display = muted ? 'none' : 'block';
+    }
+  }
+
   // If there are autoplay videos, play the first one on load
   if (autoplayIframes.length > 0) {
     const firstAutoplay = autoplayIframes[0];
@@ -16,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
       players[idx].play().catch(() => {});
       firstAutoplay.classList.add('in-view');
       currentPlayingIdx = idx;
+      updateMuteButton(idx, true);
     }
   }
 
@@ -34,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
       if (currentPlayingIdx !== null) {
         players[currentPlayingIdx].pause().then(() => {
           players[currentPlayingIdx].setMuted(true);
+          updateMuteButton(currentPlayingIdx, true);
         }).catch(() => {});
         allIframes[currentPlayingIdx].classList.remove('in-view');
       }
@@ -41,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
       players[newIdx].play().catch(() => {});
       allIframes[newIdx].classList.add('in-view');
       currentPlayingIdx = newIdx;
+      updateMuteButton(newIdx, true);
     }
 
     // Opacity animation for all videos: in-view if at least 80% visible
@@ -54,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (idx !== -1) {
           players[idx].pause().then(() => {
             players[idx].setMuted(true);
+            updateMuteButton(idx, true);
           }).catch(() => {});
         }
       }
