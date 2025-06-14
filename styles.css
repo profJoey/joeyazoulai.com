@@ -644,30 +644,3 @@ a.portfolio-heading:active {
 .video-embed.in-view {
   opacity: 1;
 }
-
-.mute-button {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  background: rgba(0, 0, 0, 0.6);
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s;
-}
-
-.mute-button:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.mute-button svg {
-  width: 24px;
-  height: 24px;
-  fill: white;
-}
