@@ -2,20 +2,49 @@ document.addEventListener("DOMContentLoaded", function() {
   // Only select iframes with both video-embed and autoplay-video for autoplay logic
   const autoplayIframes = Array.from(document.querySelectorAll('iframe.video-embed.autoplay-video'));
   const allIframes = Array.from(document.querySelectorAll('iframe.video-embed'));
-  const players = allIframes.map(iframe => new Vimeo.Player(iframe, {muted: true, loop: true}));
+  // Initialize players with proper options for reliable autoplay
+  const players = allIframes.map(iframe => {
+    const options = {
+      muted: true,
+      loop: true,
+      autopause: false
+    };
+
+    // Modify URL parameters for autoplay videos
+    if (iframe.classList.contains('autoplay-video')) {
+      let src = new URL(iframe.src);
+      src.searchParams.set('autoplay', '1');
+      src.searchParams.set('muted', '1');
+      src.searchParams.set('controls', '1');
+      iframe.src = src.toString();
+    }
+
+    return new Vimeo.Player(iframe, options);
+  });
+
   let currentPlayingIdx = null;
 
   // Set initial opacity for all videos
   allIframes.forEach(iframe => iframe.classList.remove('in-view'));
 
-  // If there are autoplay videos, play the first one on load
+  // Initialize first video immediately
   if (autoplayIframes.length > 0) {
     const firstAutoplay = autoplayIframes[0];
     const idx = allIframes.indexOf(firstAutoplay);
     if (idx !== -1) {
-      players[idx].play().catch(() => {});
-      firstAutoplay.classList.add('in-view');
-      currentPlayingIdx = idx;
+      players[idx].ready().then(() => {
+        console.log('First player ready');
+        return players[idx].setVolume(0);
+      }).then(() => {
+        console.log('Volume set to 0');
+        return players[idx].play();
+      }).then(() => {
+        console.log('First video playing');
+        firstAutoplay.classList.add('in-view');
+        currentPlayingIdx = idx;
+      }).catch(error => {
+        console.error('Error initializing first video:', error);
+      });
     }
   }
 
