@@ -422,12 +422,17 @@ a.portfolio-heading:active {
   gap: 3rem;
 }
 
-.steps {
+.steps, .client-name {
   color: #d9ca7e;
-  text-transform: uppercase;
   font-family: "Mooli", sans-serif;
   font-weight: 900;
+  font-size: 1.5rem;
   line-height: 2rem;
+  display: block;
+}
+
+.steps {
+  text-transform: uppercase;
 }
 
 .client-header-logo {
