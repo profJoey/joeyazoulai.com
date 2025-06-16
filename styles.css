@@ -261,16 +261,19 @@ section.client-testimonial {
   align-items: center;
   text-decoration: none;
 }
-
+.msg-me {
+  font-size: 1rem;
+  color: #d9ca7e;
+  font-family: "Mooli", sans-serif;
+  font-weight: 700;
+  text-decoration: underline;
+}
 .message-me {
   /* display: flex;
   justify-content: center;
   align-items: center; */
   font-size: 1rem;
   color: #d9ca7e;
-  font-family: "Mooli", sans-serif;
-  font-weight: 700;
-  text-decoration: underline;
 }
 
 .message-me a {
@@ -289,6 +292,8 @@ a.portfolio-heading:visited,
 a.portfolio-heading:hover,
 a.portfolio-heading:active {
   text-decoration: none !important;
+  text-decoration-style: none;
+  text-decoration-color: transparent;
   color: #fff;
   border-bottom: none;
   -webkit-text-decoration: none;
