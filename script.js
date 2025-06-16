@@ -173,4 +173,26 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   // Logo carousel logic removed for static display
+
+  // Fade in LinkedIn wrappers in .social-gallery sections one at a time
+  const socialGalleries = document.querySelectorAll('.social-gallery');
+  socialGalleries.forEach(section => {
+    const wrappers = Array.from(section.querySelectorAll('.linkedin-wrapper'));
+    wrappers.forEach(w => w.classList.remove('visible'));
+    let hasAnimated = false;
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !hasAnimated) {
+          hasAnimated = true;
+          wrappers.forEach((wrapper, i) => {
+            setTimeout(() => {
+              wrapper.classList.add('visible');
+            }, i * 350);
+          });
+          obs.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    observer.observe(section);
+  });
 });
