@@ -174,25 +174,58 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Logo carousel logic removed for static display
 
-  // Fade in LinkedIn wrappers in .social-gallery sections one at a time
+  // Fade in/out LinkedIn iframes in .social-gallery sections, only one section visible at a time
   const socialGalleries = document.querySelectorAll('.social-gallery');
-  socialGalleries.forEach(section => {
-    const wrappers = Array.from(section.querySelectorAll('.linkedin-wrapper'));
-    wrappers.forEach(w => w.classList.remove('visible'));
-    let hasAnimated = false;
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !hasAnimated) {
-          hasAnimated = true;
-          wrappers.forEach((wrapper, i) => {
-            setTimeout(() => {
-              wrapper.classList.add('visible');
-            }, i * 350);
-          });
-          obs.disconnect();
+  let currentVisibleGallery = null;
+  let fadeInTimeouts = [];
+  const galleryObserver = new IntersectionObserver((entries) => {
+    // Find the entry with the highest intersectionRatio >= 0.6
+    let maxEntry = null;
+    entries.forEach(entry => {
+      if (entry.intersectionRatio >= 0.6) {
+        if (!maxEntry || entry.intersectionRatio > maxEntry.intersectionRatio) {
+          maxEntry = entry;
         }
+      }
+    });
+    // If the visible section has changed, update visibility
+    if (currentVisibleGallery !== (maxEntry && maxEntry.target)) {
+      // Instantly fade out all iframes in all sections
+      socialGalleries.forEach(section => {
+        const wrappers = Array.from(section.querySelectorAll('.linkedin-wrapper'));
+        wrappers.forEach(wrapper => {
+          const iframe = wrapper.querySelector('iframe');
+          if (iframe) iframe.classList.remove('fade-visible');
+        });
       });
-    }, { threshold: 0.3 });
-    observer.observe(section);
+      // Clear any pending fade-in timeouts
+      fadeInTimeouts.forEach(t => clearTimeout(t));
+      fadeInTimeouts = [];
+      // If a new section is visible, fade in its iframes staggered
+      if (maxEntry) {
+        const wrappers = Array.from(maxEntry.target.querySelectorAll('.linkedin-wrapper'));
+        wrappers.forEach((wrapper, i) => {
+          const timeout = setTimeout(() => {
+            const iframe = wrapper.querySelector('iframe');
+            if (iframe) iframe.classList.add('fade-visible');
+          }, i * 350);
+          fadeInTimeouts.push(timeout);
+        });
+        currentVisibleGallery = maxEntry.target;
+      } else {
+        currentVisibleGallery = null;
+      }
+    }
+  }, { threshold: Array.from({length: 101}, (_, i) => i / 100) });
+  socialGalleries.forEach(section => {
+    Array.from(section.querySelectorAll('.linkedin-wrapper iframe')).forEach(f => f.classList.remove('fade-visible'));
+    galleryObserver.observe(section);
+  });
+
+  // Disable scrollbars on all LinkedIn embeds
+  document.querySelectorAll('.linkedin-wrapper iframe').forEach(iframe => {
+    iframe.setAttribute('scrolling', 'no');
+    // For extra robustness, also set style
+    iframe.style.overflow = 'hidden';
   });
 });

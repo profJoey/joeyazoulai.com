@@ -501,15 +501,13 @@ a.portfolio-heading:active {
   justify-content: center; /* Center content horizontally */
 }
 
-/* Fade-in animation for LinkedIn wrappers */
-.linkedin-wrapper {
+/* Fade-in animation for LinkedIn iframes only, not the wrapper */
+.linkedin-wrapper iframe {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1);
 }
-.linkedin-wrapper.visible {
+.linkedin-wrapper iframe.fade-visible {
   opacity: 1;
-  transform: none;
 }
 
 .linkedin-wrapper iframe,
