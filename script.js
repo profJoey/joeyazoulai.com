@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
-  // Create SVG icons for mute/unmute
-  const muteIcon = `<svg viewBox="0 0 24 24"><path d="M12 4L6 10H3v4h3l6 6V4zm5.03 4.71l1.41 1.41c.78.78 1.81 1.17 2.83 1.17 1.02 0 2.05-.39 2.83-1.17l1.41-1.41c-1.55-1.55-4.1-1.55-5.66 0zm2.83-2.83l1.41 1.41C23.11 9.13 24 11.51 24 14c0 2.49-.89 4.87-2.73 6.71l-1.41-1.41C21.45 18.55 22.17 16.65 22.17 14.7c0-1.95-.72-3.85-2.17-5.3z"/></svg>`;
-  const unmuteIcon = `<svg viewBox="0 0 24 24"><path d="M3 10v4h3l6 6V4L6 10H3zm13.59 6.41L15 14.83l-2.59 2.59L11 16.01l2.59-2.59L11 10.83l1.41-1.41L15 12.01l2.59-2.59L19 10.83l-2.59 2.59L19 16.01l-1.41 1.41z"/></svg>`;
+  // Use SVGs from assets/icons for mute/unmute
+  const muteIcon = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="M792-56 671-177q-25 16-53 27.5T560-131v-82q14-5 27.5-10t25.5-12L480-368v208L280-360H120v-240h128L56-792l56-56 736 736-56 56Zm-8-232-58-58q17-31 25.5-65t8.5-70q0-94-55-168T560-749v-82q124 28 202 125.5T840-481q0 53-14.5 102T784-288ZM650-422l-90-90v-130q47 22 73.5 66t26.5 96q0 15-2.5 29.5T650-422ZM480-592 376-696l104-104v208Zm-80 238v-94l-72-72H200v80h114l86 86Zm-36-130Z"/></svg>`;
+  const unmuteIcon = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="M560-131v-82q90-26 145-100t55-168q0-94-55-168T560-749v-82q124 28 202 125.5T840-481q0 127-78 224.5T560-131ZM120-360v-240h160l200-200v640L280-360H120Zm440 40v-322q47 22 73.5 66t26.5 96q0 51-26.5 94.5T560-320ZM400-606l-86 86H200v80h114l86 86v-252ZM300-480Z"/></svg>`;
   
   // Only select iframes with both video-embed and autoplay-video for autoplay logic
   const autoplayIframes = Array.from(document.querySelectorAll('iframe.video-embed.autoplay-video'));
