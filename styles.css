@@ -19,6 +19,10 @@ body {
 }
 
 p {
+  line-height: 1.6;
+}
+
+.testimonial p {
   line-height: 1.25;
 }
 
@@ -168,6 +172,7 @@ p {
 
 .section.cols-2-30-70 {
   grid-template-columns: 3fr 7fr;
+  align-items: flex-start;
 }
 
 .section.cols-2 {
@@ -498,6 +503,14 @@ a.portfolio-heading:active {
   max-width: 400px;
 }
 
+.testimonial-date {
+  text-align: right;
+}
+
+.testimonial-media {
+  align-self: flex-start;
+}
+
 .testimonial {
   aspect-ratio: 8.5 / 11;
   background-color: white;
@@ -508,12 +521,24 @@ a.portfolio-heading:active {
   font-size: 1rem;
   line-height: 1.75;
   margin: 0 auto;
+  margin-top: 2rem;
   max-width: min(90vw, 680px);
   max-height: 80vh;
   min-height: 400px;
   overflow: auto;
   position: relative;
   overflow: auto;
+}
+
+.client-name {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.client-title, .client-org {
+  display: block;
+  line-height: 1.1;
+  font-size: .95rem;
 }
 /* .testimonial::after {
   content: "";
