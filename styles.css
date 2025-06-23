@@ -693,7 +693,7 @@ a.portfolio-heading:active {
 /* Consolidated Media Queries */
 /* ===================== */
 
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
   .client-header.col-60 {
     width: 100%;
     text-align: left;
@@ -721,7 +721,7 @@ a.portfolio-heading:active {
     text-align: center;
     padding: 0.5rem 0;
   }
-}
+} */
 
 @media (max-width: 500px) {
   body {
