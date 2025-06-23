@@ -64,7 +64,6 @@ p {
   max-width: 800px;
   background: transparent;
   overflow: hidden;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
 }
 
 .logo-carousel {
@@ -102,13 +101,14 @@ p {
   overflow: hidden;
 }
 .hero-image {
-  max-height: 100%;
-  max-width: 100%;
+  max-height: 80%;
+  max-width: 80%;
   width: auto;
   height: auto;
   object-fit: contain;
   border-radius: 12px;
   display: block;
+  border: 1px solid #d9ca7e;
 }
 
 .hero-content {
@@ -131,7 +131,7 @@ p {
 .hero-tagline {
   font-size: 2rem;
   font-weight: 100;
-  margin: 0 0 1rem 0;
+  margin: 0 0 2rem 0;
   color: #d9ca7e;
   font-family: "Mooli", sans-serif;
 }
@@ -141,8 +141,13 @@ p {
 }
 
 .hero-description {
-  font-size: 1.5rem;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: 300;
   color: #fff;
+  margin: 0 0 2rem 0;
 }
 
 .hero-description span {
@@ -682,11 +687,13 @@ a.portfolio-heading:active {
     justify-content: center;
     align-items: center;
     padding: 0.5rem 0;
+
   }
   .hero-image {
     max-width: 90vw;
-    height: auto;
+    height: auto;.
     margin-bottom: 1rem;
+    border: 1px solid #d9ca7e;
   }
   .section {
     display: flex !important;
@@ -762,4 +769,40 @@ a.portfolio-heading:active {
   width: 1.2rem;
   height: 1.2rem;
   fill: currentColor;
+}
+
+.cta-linkedin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0b0d0c;
+  color: #c0b27a;
+  padding: 0.5rem 1rem;
+  border: 1px solid #d9ca7e;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 400;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+}
+.cta-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+/* .cta-linkedin:hover {
+  background-color: #c0b27a;
+}
+.cta-linkedin:active {
+  background-color: #a89b6c;
+} */
+.cta-linkedin span {
+  display: inline-block;
+  vertical-align: middle;
+}
+.cta-linkedin img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
 }
