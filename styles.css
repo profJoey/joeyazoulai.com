@@ -148,6 +148,10 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
+  color: #d9ca7e;
+  font-family: "Mooli", sans-serif;
+  font-weight: 700;
 }
 
 /* Hero Section END */
