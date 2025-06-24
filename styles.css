@@ -54,7 +54,7 @@ p {
 .hero-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 4fr 1fr; /* 1:4:1 ratio */
+  grid-template-rows: auto auto auto; /* 1:4:1 ratio */
   grid-template-areas:
     "logo logo"
     "image hero-tagline"
@@ -106,13 +106,12 @@ p {
   }
 .hero-tagline {
   grid-area: hero-tagline;
+  align-self: end;
 }
 .hero-description {
   grid-area: hero-description;
 }
-.cta-linkedin {
-  grid-area: hero-cta;
-}
+
 
 .hero-tagline {
   font-size: 2rem;
@@ -649,13 +648,10 @@ a.portfolio-heading:active {
   height: 1.2rem;
   fill: currentColor;
 }
-
 .cta-linkedin {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-self: center;
-  align-self: center;
+  grid-area: hero-cta;
+  align-self: start;
+  display: block;
   background-color: #0b0d0c;
   color: #c0b27a;
   padding: 0.5rem;
@@ -668,17 +664,6 @@ a.portfolio-heading:active {
   width: auto;
   height: 20px;
 }
-.cta-icon {
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-right: 0.5rem;
-}
-/* .cta-linkedin:hover {
-  background-color: #c0b27a;
-}
-.cta-linkedin:active {
-  background-color: #a89b6c;
-} */
 .cta-linkedin span {
   display: inline-block;
   vertical-align: middle;
