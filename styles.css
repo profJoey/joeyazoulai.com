@@ -521,16 +521,60 @@ a.portfolio-heading:active {
   line-height: 1.75;
   margin: 0 auto;
   margin-top: 2rem;
-  /* Under Review */
   width: 100%;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  /* max-width: min(90vw, 680px); */
-  /* max-height: 80vh;
-  min-height: 400px; */
-  overflow: auto;
+  overflow: hidden; /* Prevent scroll initially */
   position: relative;
-  overflow: auto;
+}
+
+.testimonial-wrapper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 8rem; /* Adjust as needed */
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(255,255,255,0.95) 0%,
+    rgba(255,255,255,0) 100%
+  );
+  z-index: 2;
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+
+.testimonial-wrapper.scrolling::after {
+  opacity: 0;
+}
+.testimonial-wrapper.scrolling {
+  overflow-y: auto;
+}
+
+.more-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.85);
+  color: #333;
+  text-align: center;
+  padding: 1rem 0;
+  cursor: pointer;
+  z-index: 3;
+  font-weight: bold;
+  font-family: "Mooli", sans-serif;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  user-select: none;
+  transition: opacity 0.4s;
+}
+
+.testimonial-wrapper.scrolling .more-label {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .testimonial {
@@ -701,7 +745,7 @@ a.portfolio-heading:active {
 .client-lower-third-title {
   color: #d9ca7e;
   font-size: 1.2rem;
-  line-height: 2rem;
+  line-height: 1.5rem;
 }
 /* ============= */
 /* Media Queries */

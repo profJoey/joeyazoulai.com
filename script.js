@@ -243,3 +243,26 @@ document.addEventListener("DOMContentLoaded", function() {
     iframe.style.overflow = 'hidden';
   });
 });
+
+// Unlock testimonial scroll on 'More' click
+function setupTestimonialMoreButton() {
+  var wrapper = document.querySelector('.testimonial-wrapper');
+  var moreLabel = wrapper ? wrapper.querySelector('.more-label') : null;
+  if (!wrapper || !moreLabel) return;
+
+  // Prevent scroll initially
+  wrapper.classList.remove('scrolling');
+
+  moreLabel.addEventListener('click', function() {
+    wrapper.classList.add('scrolling');
+    // Animate scroll to bottom
+    wrapper.scrollTo({
+      top: wrapper.scrollHeight,
+      behavior: 'smooth'
+    });
+    // Hide the label
+    moreLabel.style.display = 'none';
+  });
+}
+
+document.addEventListener('DOMContentLoaded', setupTestimonialMoreButton);
