@@ -739,7 +739,7 @@ a.portfolio-heading:active {
     align-self: start;
     margin-top: 0;
     margin-bottom: 1rem;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
   .hero-image-wrapper {
     grid-area: hero-image;
