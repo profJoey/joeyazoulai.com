@@ -85,11 +85,12 @@ p {
   margin-right: 2rem;
   display: flex;
   justify-content: end;
+  align-items: center;
   width: 90%;
   overflow: hidden;
 }
 .hero-image {
-  max-width: 100%;
+  max-width: 80%;
   max-height: 80%;
   width: auto;
   height: auto;
@@ -106,7 +107,7 @@ p {
 }
 .hero-tagline {
   grid-area: hero-tagline;
-  margin-top: 4vw;
+  margin-top: 10vw;
   max-width: 500px;
   align-self: end;
   font-size: 2rem;
@@ -147,7 +148,13 @@ p {
   text-decoration: none;
   color: #d9ca7e;
   font-family: "Mooli", sans-serif;
+  font-size: 1.5rem;
   font-weight: 700;
+}
+.portfolio-arrow {
+  margin-top: 0.5rem;
+  height: 2rem;
+  width: auto;
 }
 /* Hero Section END */
 
@@ -675,41 +682,11 @@ a.portfolio-heading:active {
   vertical-align: middle;
 }
 
-/* ===================== */
-/* Consolidated Media Queries */
-/* ===================== */
+/* ============= */
+/* Media Queries */
+/* ============= */
 
-/* @media (max-width: 900px) {
-  .client-header.col-60 {
-    width: 100%;
-    text-align: left;
-    padding-right: 0;
-  }
-  .client-header-logo-wrap {
-    justify-content: flex-start;
-  }
-  .hero-section {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
-    grid-template-areas:
-      "logo"
-      "content"
-      "image"
-      "portfolio";
-    height: auto;
-    min-height: 0;
-  }
-  .hero-image-wrapper {
-    margin-right: 0;
-  }
-  .hero-content {
-    align-items: center;
-    text-align: center;
-    padding: 0.5rem 0;
-  }
-} */
-
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   body {
     padding: 0 2rem;
   }
@@ -747,7 +724,7 @@ a.portfolio-heading:active {
   .hero-section {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto auto auto auto auto;
+    /* grid-template-rows: auto auto auto auto auto; */
     grid-template-areas:
       "hero-logo hero-logo"
       "hero-tagline hero-tagline"
@@ -759,8 +736,8 @@ a.portfolio-heading:active {
   }
   .hero-tagline {
     grid-area: hero-tagline;
-    width: 100%;
-    text-align: left;
+    align-self: start;
+    margin-top: 0;
     margin-bottom: 1rem;
     font-size: 1.75rem;
   }
@@ -769,8 +746,7 @@ a.portfolio-heading:active {
     width: 100%;
     min-width: 0;
     height: auto;
-    justify-content: center;
-    align-items: center;
+    justify-content: start; /* x-axis */
     padding: 0.5rem 0;
     display: flex;
   }
@@ -779,16 +755,18 @@ a.portfolio-heading:active {
   }
   .hero-description {
     grid-area: hero-description;
+    align-self: start;
     width: 100%;
     text-align: left;
     margin-bottom: 1rem;
-    font-size: 1rem;
+    /* font-size: 1rem; */
   }
   .cta-linkedin {
-    grid-area: hero-cta;
     width: 100%;
     margin-bottom: 1rem;
-    margin-left: -2rem;
+    margin-left: -4rem;
+    justify-self: start;
+    align-self: center;
   }
   .portfolio-scroll {
     grid-area: portfolio;
