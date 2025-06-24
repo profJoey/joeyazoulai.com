@@ -763,9 +763,9 @@ a.portfolio-heading:active {
   }
   .section {
     grid-template-columns: 1fr !important;
-    flex-direction: column;
+    /* flex-direction: column;
     flex-wrap: wrap;
-    display: flex !important;
+    display: flex !important; */
   }
   .sub-section {
     width: 100%;
@@ -875,5 +875,10 @@ a.portfolio-heading:active {
   }
   .media-section {
     order: 2;
+  }
+  .section.client-testimonial {
+    grid-template-areas: 
+      "media"
+      "text";
   }
 }
