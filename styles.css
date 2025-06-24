@@ -751,6 +751,7 @@ a.portfolio-heading:active {
     display: flex;
   }
   .logo-carousel {
+    padding: 1rem 0rem 2rem 0rem;
     grid-area: hero-logo;
   }
   .hero-description {
@@ -763,15 +764,18 @@ a.portfolio-heading:active {
   }
   .cta-linkedin {
     width: 100%;
-    margin-bottom: 1rem;
     margin-left: -4rem;
     justify-self: start;
     align-self: center;
   }
-  .portfolio-scroll {
-    grid-area: portfolio;
-    margin-left: -2rem;
-    font-size: 1.2rem;
+  .portfolio-anchor {
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .portfolio-arrow {
+    margin-top: 0rem;
+    height: 1rem;
   }
   .main-content,
   .work-samples,
