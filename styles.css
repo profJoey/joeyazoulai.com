@@ -870,4 +870,10 @@ a.portfolio-heading:active {
   .client-lower-third {
   margin-left: 1rem;
   }
+  .text-section {
+    order: 1;
+  }
+  .media-section {
+    order: 2;
+  }
 }
