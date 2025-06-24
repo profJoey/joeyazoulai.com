@@ -81,9 +81,11 @@ p {
 }
 .hero-image-wrapper {
   grid-area: image;
+  aspect-ratio: 4 / 5;
+  margin-right: 2rem;
   display: flex;
-  justify-content: center;
-  height: 100%;
+  justify-content: end;
+  width: 90%;
   overflow: hidden;
 }
 .hero-image {
@@ -104,6 +106,8 @@ p {
 }
 .hero-tagline {
   grid-area: hero-tagline;
+  margin-top: 4vw;
+  max-width: 500px;
   align-self: end;
   font-size: 2rem;
   font-weight: 100;
@@ -117,6 +121,7 @@ p {
 }
 
 .hero-description {
+  max-width: 400px;
   margin-top: 0;
   font-family: "Lato", sans-serif;
   font-style: normal;
