@@ -751,7 +751,7 @@ a.portfolio-heading:active {
     display: flex;
   }
   .logo-carousel {
-    padding: 1rem 0rem 2rem 0rem;
+    padding: .5rem 0rem 1rem 0rem;
     grid-area: hero-logo;
   }
   .hero-description {
@@ -770,11 +770,12 @@ a.portfolio-heading:active {
   }
   .portfolio-anchor {
     font-size: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
+    margin-top: 0;
+    margin-bottom: 0.25rem;
   }
   .portfolio-arrow {
     margin-top: 0rem;
+    margin-bottom: .5rem;
     height: 1rem;
   }
   .main-content,
