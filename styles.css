@@ -336,7 +336,7 @@ a.portfolio-heading:active {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 0;
+  padding: 2rem 0 3rem 0;
   width: calc(
     var(--logo-width) * var(--logo-count) + var(--logo-gap) *
       (var(--logo-count) - 1)
@@ -349,7 +349,7 @@ a.portfolio-heading:active {
 
 .logo-track {
   display: flex;
-  flex-wrap: nowrap; /* Prevent wrapping */
+  flex-wrap: nowrap;
   gap: var(--logo-gap);
   width: max-content;
   justify-content: flex-start;
@@ -358,7 +358,7 @@ a.portfolio-heading:active {
 }
 
 .logo-img {
-  height: 64px;
+  height: 2rem;
   width: var(--logo-width);
   min-width: var(--logo-width);
   max-width: var(--logo-width);
@@ -643,24 +643,25 @@ a.portfolio-heading:active {
 }
 .cta-linkedin {
   grid-area: hero-cta;
-  width: 40%;
+  display: inline-flex; /*Button size based on child elements*/
+  width: auto;
+  align-items: center;
+  justify-content: center;
   align-self: start;
-  display: block;
+  justify-self: start; /* prevents grid stretching */
+  padding: 0.5rem 1rem;
+  border: 1px solid #d9ca7e;
   background-color: #0b0d0c;
   color: #c0b27a;
-  padding: 0.5rem;
-  border: 1px solid #d9ca7e;
   text-decoration: none;
-  font-size: 1.2rem;
   font-weight: 400;
   transition: background-color 0.3s ease;
   border-radius: 4px;
-
-  height: 20px;
 }
 .cta-linkedin span {
   display: inline-block;
   vertical-align: middle;
+  font-family: "Mooli", sans-serif;
 }
 .cta-linkedin img {
   width: 1.5rem;
