@@ -690,7 +690,19 @@ a.portfolio-heading:active {
   margin-right: 0.5rem;
   vertical-align: middle;
 }
-
+.client-lower-third {
+  margin-top: 1rem;
+  line-height: 1.2;
+  font-family: "Lato", sans-serif;
+}
+.client-lower-third span {
+  display: block;
+}
+.client-lower-third-title {
+  color: #d9ca7e;
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
 /* ============= */
 /* Media Queries */
 /* ============= */
@@ -814,17 +826,4 @@ a.portfolio-heading:active {
   .client-lower-third {
   margin-left: 1rem;
   }
-}
-.client-lower-third {
-  margin-top: 1rem;
-  line-height: 1.2;
-  font-family: "Lato", sans-serif;
-}
-.client-lower-third span {
-  display: block;
-}
-.client-lower-third-title {
-  color: #d9ca7e;
-  font-size: 1.2rem;
-  line-height: 2rem;
 }
