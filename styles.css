@@ -85,8 +85,9 @@ p {
   display: flex;
   justify-content: end;
   align-items: center;
-  width: 90%;
+  height: 90%;
   overflow: hidden;
+  justify-self: end;
 }
 .hero-image {
   max-width: 80%;
@@ -106,7 +107,7 @@ p {
 }
 .hero-tagline {
   grid-area: hero-tagline;
-  margin-top: 10vw;
+  margin-top: 3rem;
   max-width: 500px;
   align-self: end;
   font-size: 2rem;
@@ -811,9 +812,10 @@ a.portfolio-heading:active {
     width: 100%;
     min-width: 0;
     height: auto;
-    justify-content: start; /* x-axis */
     padding: 0.5rem 0;
     display: flex;
+    align-self: center;
+    justify-self: center;
   }
   .logo-carousel {
     padding: .5rem 0rem 1rem 0rem;
