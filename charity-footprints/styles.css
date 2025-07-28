@@ -130,9 +130,9 @@ p {
   color: #fff;
   text-align: left;
 }
-.hero-description span {
+/* .hero-description span {
   color: #d9ca7e;
-}
+} */
 .portfolio-scroll {
   grid-area: portfolio;
   display: flex;
@@ -260,6 +260,10 @@ p {
 
 .media-wrapper.aspect-ratio-1-1 {
   aspect-ratio: 1 / 1;
+  width: 50%;
+}
+#social-section .media-section {
+  justify-content: start;
 }
 
 .media-wrapper img,
@@ -458,7 +462,7 @@ a.portfolio-heading:active {
   color: #d9ca7e;
   font-family: "Mooli", sans-serif;
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: .8rem;
   line-height: 2rem;
   display: block;
 }
@@ -495,7 +499,8 @@ a.portfolio-heading:active {
 }
 
 .section .description h3 {
-  font-size: 2rem;
+  font-size: 1.75rem;
+  line-height: 2rem;
   font-weight: 500;
   color: #fff;
   margin: 0 0 0.5em 0;
