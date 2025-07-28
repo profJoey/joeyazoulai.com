@@ -160,6 +160,7 @@ p {
   align-items: stretch;
   margin-bottom: 6rem;
   width: 100%;
+  min-height: 90vh;
 }
 
 .section.cols-2-60-40 {
