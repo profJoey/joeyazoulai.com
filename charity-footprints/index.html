@@ -81,6 +81,8 @@
         z-index: 1;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         font-size: 6rem;
         color: #d3d3d3;
         font-family: "Lato", sans-serif;
@@ -88,13 +90,23 @@
         font-style: italic;
         line-height: 1.2;
         text-align: left;
-        margin-left: 4rem;
+        text-align: center;
       }
       .hero-description {
         grid-area: description;
-        align-self: center;
+        align-self: start;
         justify-self: start;
+        margin-top: 3rem;
         margin-right: 8rem;
+      }
+      .hero-description h3 {
+        font-size: 1.75rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+        color: #d9ca7e;
+      }
+      .hero-description h3 span {
+        /* text-decoration: underline; */
       }
       .hero-description p {
         font-weight: 400;
@@ -102,7 +114,7 @@
         line-height: 1.5;
       }
       .hero-description p span {
-        color: #d9ca7e;
+        font-style: italic;
       }
       .testimonial {
         grid-area: testimonial;
@@ -174,7 +186,7 @@
       }
       .purchase-details .promo-text {
         text-align: center;
-        margin-top: .25rem;
+        margin-top: 0.25rem;
         margin-bottom: 1.25rem;
       }
       .purchase-details > * {
@@ -225,15 +237,23 @@
     <div class="content-grid">
       <h1 class="hero-text">Get Attention from Funders</h1>
       <video class="hero-video" autoplay loop muted playsinline>
-        <source src="https://azoulai.s3.us-east-2.amazonaws.com/movie-hevc.mov" type='video/mp4; codecs="hvc1"' />
-        <source src="https://azoulai.s3.us-east-2.amazonaws.com/movie-webm.webm" type="video/webm" />
+        <source
+          src="https://azoulai.s3.us-east-2.amazonaws.com/movie-hevc.mov"
+          type='video/mp4; codecs="hvc1"'
+        />
+        <source
+          src="https://azoulai.s3.us-east-2.amazonaws.com/movie-webm.webm"
+          type="video/webm"
+        />
       </video>
       <div class="hero-description">
+        <h3>Good video is <span>not out of reach!</span></h3>
         <p>
+          If you give prospective funders
           <span
-            >If you give prospective funders a face, voice, and story to connect
-            with, they will pay attention.</span
-          >
+            >a face, voice, and story to connect with</span>, they will pay
+            attention.
+        
           Joey records a remote interview with your program alum and edits the
           footage into a video that grounds your impact statement in reality.
         </p>
@@ -270,7 +290,7 @@
           ><span class="discount-price">$760</span>
         </div>
         <span class="promo-text"
-          >15% discount applied for Charity Footsteps customers!</span
+          >15% discount applied for Charity Footprints customers!</span
         >
         <button class="buy-btn">
           <span class="button-text">Buy Video</span>
