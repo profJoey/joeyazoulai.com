@@ -46,8 +46,20 @@ h2 {
 }
 p {
   font-family: "Lato", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 300;
 }
-
+.cta-paragraph {
+  font-weight: 500;
+}
+a {
+  color: #d9ca7e;
+}
+a:hover {
+  color: #c0b27a;
+  text-decoration: none;
+}
 /*Hero Section START*/
 
 .hero-section {
