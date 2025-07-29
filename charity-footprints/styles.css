@@ -12,7 +12,6 @@ body {
   font-family: "Lato", sans-serif;
   color: #d3d3d3;
   font-size: 16px;
-  line-height: 1.5;
 }
 
 html,
@@ -51,6 +50,10 @@ p {
   font-weight: 300;
 }
 
+p span, h3 span {
+  font-weight: 700;
+}
+
 a {
   color: #d9ca7e;
 }
@@ -59,7 +62,17 @@ a:hover {
   color: #c0b27a;
   text-decoration: none;
 }
-
+.hero-description h3 {
+  font-size: 1.75rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  color: #d9ca7e;
+}
+/* .hero-description p {
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.5;
+} */
 .section .description h3 {
   font-size: 1.75rem;
   line-height: 2rem;
@@ -273,22 +286,7 @@ a:hover {
   grid-area: description;
   align-self: start;
   justify-self: start;
-  margin-top: 3rem;
   margin-right: 8rem;
-}
-.hero-description h3 {
-  font-size: 1.75rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
-  color: #d9ca7e;
-}
-.hero-description p {
-  font-weight: 400;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-.hero-description p span {
-  font-style: italic;
 }
 .testimonial {
   grid-area: testimonial;
@@ -318,17 +316,16 @@ a:hover {
 .client-quote {
   font-weight: 300;
   margin-left: 2rem;
-  font-style: italic;
 }
-.client-quote p {
+/* .client-quote p {
   font-style: italic;
-}
+} */
 .client-lower-third {
   font-weight: 500;
 }
 .client-quote h4 {
   font-size: 1.5rem;
-  line-height: 1.5rem;
+  line-height: 1.6rem;
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-weight: 300;
