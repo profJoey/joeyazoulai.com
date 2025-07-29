@@ -938,6 +938,10 @@ a.portfolio-heading:active {
       body, .video-wrapper, .media-wrapper {
         background-color: #161616;
       }
+            .purchase-details {
+        background-color: rgba(22, 22, 22, 0.7);
+
+      }
 /* ============= */
 /* Media Queries */
 /* ============= */
