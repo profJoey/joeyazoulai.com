@@ -43,7 +43,7 @@ body,
 /* MAIN SECTION END */
 
 /* TEXT STYLES START */
-p {
+p, li {
   font-family: "Lato", sans-serif;
   font-size: 1.25rem;
   line-height: 1.5rem;
@@ -53,7 +53,9 @@ p {
 p span, h3 span {
   font-weight: 700;
 }
-
+li {
+  margin-bottom: 0.5rem;
+}
 a {
   color: #d9ca7e;
 }
@@ -337,7 +339,7 @@ a:hover {
   position: fixed;
   bottom: 0px;
   right: 0px;
-  width: 15rem;
+  width: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -370,18 +372,30 @@ a:hover {
   font-weight: 700;
   padding: 10px 20px;
   background-color: #d9ca7e;
-  color: #0b0d0c;
+  color: #000;
   border: none;
-  border-radius: 5px;
+  border-radius: 12px;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.buy-btn-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buy-btn-text img {
+  width: 2rem;
 }
 .buy-btn .button-text {
   display: block;
   font-size: 2rem;
+  margin-left: 0.5rem;
 }
 .buy-btn .button-subtext {
   display: block;
   font-size: 0.8rem;
+  line-height: 0.8rem;
   font-weight: 400;
   margin-top: 0.25rem;
 }
