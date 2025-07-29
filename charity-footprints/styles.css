@@ -363,26 +363,34 @@ h4 {
   border-radius: 8px;
   z-index: 999;
 }
-.purchase-details .full-price {
+.full-price {
   font-size: 3rem;
   color: #d9ca7e;
   font-weight: 700;
   line-height: 2rem;
+}
+.full-price.charity-footprints {
   text-decoration-line: line-through;
 }
-.purchase-details .discount-price {
+.discount-price {
   color: #d3d3d3;
   font-size: 2rem;
   line-height: 2rem;
+  display: none;
 }
-.purchase-details .promo-text {
+.discount-price.charity-footprints {
+  display: inline-block;
+}
+.promo-text {
   text-align: center;
   margin-top: 0.25rem;
-  margin-bottom: 1.25rem;
+  display: none;
 }
-.purchase-details > * {
+
+.promo-text.charity-footprints {
   display: block;
 }
+
 .buy-btn {
   font-family: "Lato", sans-serif;
   font-weight: 700;
@@ -394,6 +402,7 @@ h4 {
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  margin-top: 1.25rem;
 }
 .buy-btn-text {
   display: flex;
@@ -433,6 +442,12 @@ ul.checkmark-list li::before {
   color: #d9ca7e; /* Your brand color */
   font-weight: bold;
   font-size: 1.2em;
+}
+.removable-line-item {
+  display: none;
+}
+.removable-line-item.charity-footprints {
+  display: list-item;
 }
 /* PURCHASE DETAILS START */
 /* ============= */
