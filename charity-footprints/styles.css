@@ -648,12 +648,6 @@ a.portfolio-heading:active {
   align-items: center; /* Center content vertically */
   justify-content: center; /* Center content horizontally */
 }
-
-/* .testimonial {
-  border: 1px solid #d9ca7e; /* Consistent yellow border */
-  border-radius: 8px;
-} */
-
 /* Fade-in animation for LinkedIn iframes only, not the wrapper */
 .linkedin-wrapper iframe {
   opacity: 0;
@@ -882,16 +876,16 @@ a.portfolio-heading:active {
       }
       .purchase-details {
         position: fixed;
-        bottom: 20px;
-        right: 20px;
+        bottom: 0px;
+        right: 0px;
         width: 15rem;
         margin: 0rem 2rem 2rem 0;
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 2rem .75rem;
-        background-color: rgba(11, 13, 12, 0.7);
         border-radius: 8px;
+        z-index: -1;
       }
 
       .purchase-details .full-price {
@@ -937,10 +931,6 @@ a.portfolio-heading:active {
 
       body, .video-wrapper, .media-wrapper {
         background-color: #161616;
-      }
-            .purchase-details {
-        background-color: rgba(22, 22, 22, 0.7);
-
       }
 /* ============= */
 /* Media Queries */
