@@ -22,7 +22,7 @@ body {
 
 body,
 .video-wrapper,
-.media-wrapper {
+.media-wrapper, .purchase-details {
   background-color: #161616;
 }
 .offer-section {
@@ -346,7 +346,7 @@ a:hover {
   align-items: center;
   padding: 2rem;
   border-radius: 8px;
-  z-index: -1;
+  z-index: 999;
 }
 .purchase-details .full-price {
   font-size: 3rem;

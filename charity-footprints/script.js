@@ -1,4 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
+  // Try to find the buy button after DOM is loaded
+  const buyButton = document.querySelector('.buy-btn');
+  console.log('Buy button found:', buyButton); // Debug log to check if button exists
+  
+  if (buyButton) {
+    buyButton.addEventListener('click', function() {
+      console.log('Buy button clicked');
+      window.location.href = 'https://buy.stripe.com/cNibJ12gcdsmd4t5709fW04';
+    });
+  } else {
+    console.error('Buy button not found - check your HTML class name');
+  }
+
   // Create SVG icons for mute/unmute
   const muteIcon = `<img src="https://azoulai.s3.us-east-2.amazonaws.com/icons/volume_off.svg" alt="Mute" style="width: 1.2rem; height: 1.2rem;">`;
   const unmuteIcon = `<img src="https://azoulai.s3.us-east-2.amazonaws.com/icons/volume_up.svg" alt="Unmute" style="width: 1.2rem; height: 1.2rem;">`;
