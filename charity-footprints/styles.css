@@ -399,6 +399,25 @@ a:hover {
   font-weight: 400;
   margin-top: 0.25rem;
 }
+ul.checkmark-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.checkmark-list li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+ul.checkmark-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #d9ca7e; /* Your brand color */
+  font-weight: bold;
+  font-size: 1.2em;
+}
 /* PURCHASE DETAILS START */
 /* ============= */
 /* Media Queries */
