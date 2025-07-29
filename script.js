@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
-  // Create SVG icons for mute/unmute
-  const muteIcon = `<svg viewBox="0 0 24 24"><path d="M12 4L6 10H3v4h3l6 6V4zm5.03 4.71l1.41 1.41c.78.78 1.81 1.17 2.83 1.17 1.02 0 2.05-.39 2.83-1.17l1.41-1.41c-1.55-1.55-4.1-1.55-5.66 0zm2.83-2.83l1.41 1.41C23.11 9.13 24 11.51 24 14c0 2.49-.89 4.87-2.73 6.71l-1.41-1.41C21.45 18.55 22.17 16.65 22.17 14.7c0-1.95-.72-3.85-2.17-5.3z"/></svg>`;
-  const unmuteIcon = `<svg viewBox="0 0 24 24"><path d="M3 10v4h3l6 6V4L6 10H3zm13.59 6.41L15 14.83l-2.59 2.59L11 16.01l2.59-2.59L11 10.83l1.41-1.41L15 12.01l2.59-2.59L19 10.83l-2.59 2.59L19 16.01l-1.41 1.41z"/></svg>`;
+  // Create icons for mute/unmute from S3 bucket
+  const muteIcon = `<img src="https://azoulai.s3.us-east-2.amazonaws.com/icons/volume_off.svg" alt="Mute" style="width: 1.2rem; height: 1.2rem;">`;
+  const unmuteIcon = `<img src="https://azoulai.s3.us-east-2.amazonaws.com/icons/volume_up.svg" alt="Unmute" style="width: 1.2rem; height: 1.2rem;">`;
   
   // Only select iframes with both video-embed and autoplay-video for autoplay logic
   const autoplayIframes = Array.from(document.querySelectorAll('iframe.video-embed.autoplay-video'));

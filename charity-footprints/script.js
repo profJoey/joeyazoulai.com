@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
   // Create SVG icons for mute/unmute
-  const muteIcon = `<svg viewBox="0 0 24 24"><path d="M12 4L6 10H3v4h3l6 6V4zm5.03 4.71l1.41 1.41c.78.78 1.81 1.17 2.83 1.17 1.02 0 2.05-.39 2.83-1.17l1.41-1.41c-1.55-1.55-4.1-1.55-5.66 0zm2.83-2.83l1.41 1.41C23.11 9.13 24 11.51 24 14c0 2.49-.89 4.87-2.73 6.71l-1.41-1.41C21.45 18.55 22.17 16.65 22.17 14.7c0-1.95-.72-3.85-2.17-5.3z"/></svg>`;
-  const unmuteIcon = `<svg viewBox="0 0 24 24"><path d="M3 10v4h3l6 6V4L6 10H3zm13.59 6.41L15 14.83l-2.59 2.59L11 16.01l2.59-2.59L11 10.83l1.41-1.41L15 12.01l2.59-2.59L19 10.83l-2.59 2.59L19 16.01l-1.41 1.41z"/></svg>`;
+  const muteIcon = `<img src="https://azoulai.s3.us-east-2.amazonaws.com/icons/volume_off.svg" alt="Mute" style="width: 1.2rem; height: 1.2rem;">`;
+  const unmuteIcon = `<img src="https://azoulai.s3.us-east-2.amazonaws.com/icons/volume_up.svg" alt="Unmute" style="width: 1.2rem; height: 1.2rem;">`;
   
   // Only select iframes with both video-embed and autoplay-video for autoplay logic
   const autoplayIframes = Array.from(document.querySelectorAll('iframe.video-embed.autoplay-video'));
@@ -97,52 +97,63 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function handleIntersect(entries) {
-    // Only consider autoplay videos for autoplay logic
-    let newIdx = currentPlayingIdx;
-    entries.forEach(entry => {
-      if (entry.target.classList.contains('autoplay-video') && entry.intersectionRatio >= 0.9) {
-        const idx = allIframes.indexOf(entry.target);
-        if (idx !== -1) newIdx = idx;
-      }
-    });
-
-    if (newIdx !== currentPlayingIdx && newIdx !== null) {
-      // Pause and mute the old autoplay video
-      if (currentPlayingIdx !== null) {
-        players[currentPlayingIdx].pause().then(() => {
-          players[currentPlayingIdx].setMuted(true).then(() => {
-            const muteButton = allIframes[currentPlayingIdx].parentElement.querySelector('.mute-button');
-            if (muteButton) updateMuteButtonUI(players[currentPlayingIdx], muteButton);
-          });
-        }).catch(() => {});
-        allIframes[currentPlayingIdx].classList.remove('in-view');
-      }
-      // Play the new one (already muted from initialization)
-      players[newIdx].play().catch(() => {});
-      allIframes[newIdx].classList.add('in-view');
-      currentPlayingIdx = newIdx;
-    }
-
-    // Opacity animation for all videos: in-view if at least 80% visible
-    entries.forEach(entry => {
+  // Only consider autoplay videos for autoplay logic
+  let newIdx = currentPlayingIdx;
+  entries.forEach(entry => {
+    if (entry.target.classList.contains('autoplay-video') && entry.intersectionRatio >= 0.9) {
       const idx = allIframes.indexOf(entry.target);
-      if (entry.intersectionRatio >= 0.8) {
-        entry.target.classList.add('in-view');
-      } else {
-        entry.target.classList.remove('in-view');
-        // Mute videos when they leave viewport
-        if (idx !== -1) {
-          players[idx].pause().then(() => {
-            players[idx].setMuted(true).then(() => {
-              const muteButton = allIframes[idx].parentElement.querySelector('.mute-button');
-              if (muteButton) updateMuteButtonUI(players[idx], muteButton);
-            });
-          }).catch(() => {});
-        }
-      }
-    });
+      if (idx !== -1) newIdx = idx;
+    }
+  });
+
+  if (newIdx !== currentPlayingIdx && newIdx !== null) {
+    // Pause and mute the old autoplay video
+    if (currentPlayingIdx !== null) {
+      players[currentPlayingIdx].pause().then(() => {
+        players[currentPlayingIdx].setMuted(true).then(() => {
+          const muteButton = allIframes[currentPlayingIdx].parentElement.querySelector('.mute-button');
+          if (muteButton) updateMuteButtonUI(players[currentPlayingIdx], muteButton);
+        });
+      }).catch(() => {});
+      allIframes[currentPlayingIdx].classList.remove('in-view');
+    }
+    // Play the new one (already muted from initialization)
+    players[newIdx].play().catch(() => {});
+    allIframes[newIdx].classList.add('in-view');
+    currentPlayingIdx = newIdx;
   }
 
+  // Opacity animation for all videos: in-view if at least 80% visible
+  entries.forEach(entry => {
+    const idx = allIframes.indexOf(entry.target);
+    if (entry.intersectionRatio >= 0.8) {
+      entry.target.classList.add('in-view');
+      // FIX: Restart video when it comes back into view
+      if (idx !== -1) {
+        players[idx].play().then(() => {
+          // Ensure it stays muted unless user has unmuted it
+          return players[idx].getMuted();
+        }).then(isMuted => {
+          if (isMuted) {
+            return players[idx].setVolume(0);
+          }
+        }).catch(() => {});
+      }
+    } else {
+      entry.target.classList.remove('in-view');
+      // Mute videos when they leave viewport
+      if (idx !== -1) {
+        players[idx].pause().then(() => {
+          players[idx].setMuted(true).then(() => {
+            const muteButton = allIframes[idx].parentElement.querySelector('.mute-button');
+            if (muteButton) updateMuteButtonUI(players[idx], muteButton);
+          });
+        }).catch(() => {});
+      }
+    }
+  });
+}
+  
   const observer = new IntersectionObserver(handleIntersect, {
     threshold: Array.from({length: 101}, (_, i) => i / 100)
   });
