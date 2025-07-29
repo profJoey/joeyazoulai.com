@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>joeyazoulai.com</title>
+    <title>Impact Videos</title>
     <meta name="description" content="Welcome to Joey Azoulai's website." />
 
     <!-- Open Graph / Social Media Meta Tags -->
@@ -28,14 +28,14 @@
       name="twitter:image"
       content="https://joeyazoulai.com/assets/og-image.jpg"
     />
-
+    <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mooli&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
     <script src="https://player.vimeo.com/api/player.js"></script>
     <script src="script.js" defer></script>
     <script
@@ -46,312 +46,100 @@
     <!-- / Fathom -->
   </head>
   <body>
-    <section class="hero-section">
-      <div class="logo-carousel">
-        <div class="logo-track">
-          <img
-            src="assets/logos/client-logo-hsf-white.png"
-            alt="Logo 1"
-            class="logo-img"
-          />
-          <img
-            src="assets/logos/client-logo-msft-white.png"
-            alt="Logo 5"
-            class="logo-img"
-          />
-          <img
-            src="assets/logos/client-logo-scholastic-white.png"
-            alt="Logo 2"
-            class="logo-img"
-          />
-          <img
-            src="assets/logos/client-logo-tbg-white.png"
-            alt="Logo 3"
-            class="logo-img"
-          />
-          <img
-            src="assets/logos/client-logo-onegoal-white.png"
-            alt="Logo 4"
-            class="logo-img"
-          />
-          <img
-            src="assets/logos/client-logo-harvard-white.png"
-            alt="Logo 6"
-            class="logo-img"
-          />
+    <div class="offer-section">
+      <h1 class="hero-text">Get Attention from Funders</h1>
+      <video class="hero-video" autoplay loop muted playsinline>
+        <source
+          src="https://azoulai.s3.us-east-2.amazonaws.com/movie-hevc.mov"
+          type='video/mp4; codecs="hvc1"'
+        />
+        <source
+          src="https://azoulai.s3.us-east-2.amazonaws.com/movie-webm.webm"
+          type="video/webm"
+        />
+      </video>
+      <div class="hero-description">
+        <h3>Your <span>impact video</span> is within reach.</h3>
+        <p>
+          Give funders
+          <span>a face, voice, and a story to connect with</span>, and they will
+          pay attention.
+        </p>
+        <p>
+          We interview your program alum remotely to craft
+          <span>a video that wins hearts and minds</span>.
+        </p>
+      </div>
+      <div class="testimonial">
+        <div class="client-intro">
+          <div class="client-image">
+            <img
+              src="https://azoulai.s3.us-east-2.amazonaws.com/kate.jpg"
+              alt="Test Image 03"
+              class="image-sample"
+            />
+          </div>
+        </div>
+        <div class="client-quote">
+          <p>
+            "<span>No one had ever captured the impact of our program</span> in
+            a way that is both personal and profound. It’s hard sometimes to
+            step back and tell the story of our organization in a fresh way, and
+            Joey did exactly that.
+          </p>
+          <span class="client-lower-third"
+            >Kate Reuther | Executive Director, Uptown Stories</span
+          >
         </div>
       </div>
-      <div class="hero-image-wrapper">
-        <img
-          src="assets/photos/joey-0071.jpg"
-          alt="Sample"
-          class="hero-image"
-        />
+      <div class="purchase-details">
+        <div class="price">
+          <span class="full-price">$895</span
+          ><span class="discount-price">$760</span>
+        </div>
+        <span class="promo-text"
+          >Use code FOOTPRINTS15 at<br />
+          checkout for 15% discount</span
+        >
+        <button class="buy-btn">
+          <div class="buy-btn-text">
+            <img
+              src="https://azoulai.s3.us-east-2.amazonaws.com/icons/shopping_bag_48dp_000_FILL0_wght400_GRAD0_opsz48.svg"
+              alt="Cart Icon"
+              class="cart-icon"
+            />
+            <span class="button-text">Buy your video</span>
+          </div>
+          <span class="button-subtext">Pay $380 Deposit</span>
+        </button>
       </div>
-      <h1 class="hero-tagline">
-        Marketing Services for Nonprofit & Education Organizations
-      </h1>
-      <p class="hero-description">
-Transform your marketing channels into a growth engine with Joey, an expert content creator, educator, and learning designer. Joey and his team craft strategies, key messages, and a content library to engage your audience and establish your organization as a trusted resource. Save time and gain peace of mind with Joey as your partner.
-      </p>
-      <a
-        class="cta-linkedin"
-        href="https://www.linkedin.com/in/joeyazoulai"
-        target="_blank"
-        rel="noopener"
-      >
-        <img
-          src="assets/icons/linkedin-brand.svg"
-          alt="LinkedIn Icon"
-          class="cta-icon"
-        />
-        <span>Say hi!</span>
-      </a>
-      <div class="portfolio-scroll">
-        <a
-          href="#work-samples"
-          class="portfolio-anchor"
-          aria-label="Scroll to portfolio"
-          >Portfolio
-        </a>
-        <img
-          src="assets/icons/double-arrow-down.svg"
-          alt="Scroll Down Arrow"
-          class="portfolio-arrow"
-        />
-      </div>
-    </section>
-    <div class="work-samples" id="work-samples">
+    </div>
+    <div class="samples-section" id="work-samples">
       <!-- Uptown Stories -->
       <div class="client">
-        <header class="client-header right-align col-60">
-          <div class="client-header-logo-wrap">
-            <img
-              src="assets/clients/uptown-stories/stacked-name-w-lighthouse.png"
-              alt="Client Logo"
-              class="client-header-logo"
-            />
-            <h2 class="client-h2">"I'll be honest, I was skeptical."</h2>
-          </div>
-        </header>
-        <section class="section cols-2-30-70 client-testimonial">
-          <div class="client-intro">
-            <div class="media-wrapper client-img aspect-ratio-1-1">
-              <img
-                src="assets/clients/uptown-stories/kate.jpg"
-                alt="Test Image 03"
-                class="image-sample"
-              />
-            </div>
-            <div class="client-lower-third">
-              <span class="client-lower-third-name">Kate Reuther</span>
-              <span class="client-lower-third-title">Exectutive Director</span>
-              <span>Uptown Stories</span>
-            </div>
-          </div>
-          <div class="testimonial-wrapper">
-            <div class="testimonial">
-              <p class="testimonial-date">June 16, 2025</p>
-              <p>
-                When Joey first approached us about working together, I'll be
-                honest—I was skeptical. We're a staff of 18 with limited
-                bandwidth, and I've had experiences with consultants who promise
-                the world but don't understand our reality.
-              </p>
-              <p>
-                Joey was different from day one. He actually slowed down to
-                match our pace. For three months, he was like this patient
-                strategist in our corner—researching our work, sending
-                thoughtful insights, and building real relationships with our
-                team. He seamlessly integrated himself into our workflow, so
-                that instead of feeling like a "consultant," he felt like a real
-                member of the team.
-              </p>
-              <p>
-                The breakthrough came when Joey interviewed our program alumni.
-                Watching him create that space for authentic storytelling—and
-                seeing how it reconnected me with why I do this work—that's when
-                I knew we had something special. No one had ever really captured
-                the impact of our program in a way that is both personal and
-                profound. It’s hard sometimes to step back and tell the story of
-                our organization in a fresh way, and Joey did exactly that.
-              </p>
-              <p>
-                The work that Joey has done for our organization will last long
-                beyond this single fundraising campaign. The alumni videos are
-                evergreen assets which we can use with grantors, donors,
-                principals, parents, and more. And the strategy that Joey lined
-                up for us will serve as a blueprint for all our further
-                campaigns. Thanks to him, we’re reaching people we’ve never
-                connected with before, on platforms where we were stagnant for
-                years. Of the dozen or so consultants we’ve worked with, Joey is
-                by far the absolute best.
-              </p>
-              <span class="client-testimonial-name">Kate Reuther</span>
-              <span class="client-title">Executive Director,</span>
-              <span class="client-org">Uptown Stories</span>
-            </div>
-            <div class="more-label">More</div>
-          </div>
-        </section>
-        <section id="research-section" class="section cols-2-60-40">
-          <div class="media-section">
-            <div class="media-wrapper">
-              <iframe
-                class="video-embed autoplay-video"
-                id="vimeo1"
-                src="https://player.vimeo.com/video/1093188488?muted=1&controls=1&loop=1"
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
+        <section id="social-section" class="section cols-2-40-60">
           <div class="text-section">
             <div class="description">
-              <span class="steps">Step 1</span>
-              <h3>Audit and Organize</h3>
+              <h3>Each purchase includes material for future projects.</h3>
               <p>
-                It's a powerful experience to see the big picture from an
-                outsider's perspective. We'll meet to validate my research and
-                discuss your challenges and opportunities, creating a clear
-                strategic foundation that respects your team's capacity while
-                identifying the highest-impact areas for growth
+                You get 45-minutes of interview footage along with your edited
+                video. Your team can use this raw material to support future
+                content creation, like
+                <span>social media posts or email campaigns</span>.
               </p>
-            </div>
-          </div>
-        </section>
-        <section id="proposal-section" class="section cols-2-40-60">
-          <div class="text-section">
-            <div class="description">
-              <span class="steps">Step 2</span>
-              <h3>Discuss Insights</h3>
               <p>
-                There are people out there who would genuinely care about your
-                mission—they just don't know you exist yet. By understanding
-                what motivates them, how they think, and what they value, we can
-                create content that positions your organization as the trusted
-                voice on the causes they already care about
+                <span>Or hire us to build your Content Library!</span> We offer
+                flexible, pay-as-you-go pricing so you can create as much or as
+                little content as you need, when you need it.
               </p>
             </div>
           </div>
           <div class="media-section">
-            <div class="media-wrapper">
+            <div class="media-wrapper aspect-ratio-1-1">
               <iframe
                 class="video-embed autoplay-video"
                 id="vimeo2"
-                src="https://player.vimeo.com/video/1093205323"
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
-        </section>
-        <section id="interview-section" class="section cols-2-60-40">
-          <div class="media-section">
-            <div class="media-wrapper">
-              <iframe
-                class="video-embed autoplay-video"
-                id="vimeo1"
-                src="https://player.vimeo.com/video/1089582360"
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
-          <div class="text-section">
-            <div class="description">
-              <span class="steps">Step 3</span>
-              <h3>Produce Interview</h3>
-              <p>
-                We'll record deep, authentic conversations with your program's
-                stakeholders about how your organization impacted their lives.
-                Each 45-minute interview become the raw material for dozens of
-                videos, social posts, and story-driven campaigns centering real
-                people who represent your mission. One thoughtful conversation
-                can create up to a 100 meaningful touchpoints that gradually
-                bring new supporters into your community.
-              </p>
-            </div>
-          </div>
-        </section>
-        <section id="content-section" class="section cols-2-40-60">
-          <div class="text-section">
-            <div class="description">
-              <span class="steps">Step 4</span>
-              <h3>Develop Content</h3>
-              <p>
-                We create sample content that experiments with different
-                approaches to grabbing our target audiences' attention in ways
-                that feel authentic to your organization. Your team contributes
-                ideas and feedback at their own pace, helping us build an
-                evergreen content library that your organization can draw from
-                throughout the year and beyond.
-              </p>
-            </div>
-          </div>
-          <div class="media-section">
-            <div class="media-wrapper">
-              <iframe
-                class="video-embed autoplay-video"
-                id="vimeo2"
-                src="https://player.vimeo.com/video/1093166486"
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
-        </section>
-        <section id="campaigns-section" class="section cols-2-60-40">
-          <div class="media-section">
-            <div class="media-wrapper">
-              <iframe
-                class="video-embed autoplay-video"
-                id="vimeo2"
-                src="https://player.vimeo.com/video/1090263145"
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
-          <div class="text-section">
-            <div class="description">
-              <span class="steps">Step 5</span>
-              <h3>Create Campaigns</h3>
-              <p>
-                We build story-driven campaigns that speak to both potential
-                supporters and your existing donor community. Whether it's
-                fundraising emails, one-on-one donor conversations, grant
-                applications, or institutional funder updates, the same
-                authentic stories adapt to strengthen everyrelationship in your
-                community.
-              </p>
-            </div>
-          </div>
-        </section>
-        <section id="fundraising-section" class="section cols-2-40-60">
-          <div class="text-section">
-            <div class="description">
-              <h3>Support Fundraising</h3>
-              <p>
-                We built a fundraising campaign around a video series that drove
-                supporters to Givebutter while simultaneously celebrating the
-                life-changing outcomes their funding makes possible. The
-                story-driven approach brought people further into the community
-                by showing real impact rather than just asking for money.
-              </p>
-            </div>
-          </div>
-          <div class="media-section">
-            <div class="media-wrapper">
-              <iframe
-                class="video-embed autoplay-video"
-                id="vimeo3"
-                src="https://player.vimeo.com/video/1090219650"
+                src="https://player.vimeo.com/video/1105497027"
                 frameborder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowfullscreen
@@ -360,6 +148,21 @@ Transform your marketing channels into a growth engine with Joey, an expert cont
           </div>
         </section>
         <section id="social-section" class="section cols-2-40-60">
+          <div class="text-section">
+            <div class="description">
+              <h3>One interview can become dozens of touchpoints.</h3>
+              <ul class="checkmark-list">
+                <li class="removable-line-item">Your Charity Footsteps page</li>
+                <li>Fundraiser pages</li>
+                <li>Your website</li>
+                <li>Grant applications</li>
+                <li>Social media posts</li>
+                <li>Email campaigns</li>
+                <li>Website content</li>
+                <li>Newsletters</li>
+              </ul>
+            </div>
+          </div>
           <div class="media-section">
             <div class="media-wrapper aspect-ratio-1-1">
               <iframe
@@ -370,20 +173,6 @@ Transform your marketing channels into a growth engine with Joey, an expert cont
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowfullscreen
               ></iframe>
-            </div>
-          </div>
-          <div class="text-section">
-            <div class="description">
-              <h3>Grow on Social</h3>
-              <p>
-                LinkedIn became our secret weapon for advocates beyond northern
-                Manhattan who have a natural affinity for supporting young
-                writers and their development. We created a campaign centered on
-                'the kid we once were'— protecting young people's time and space
-                to write, find themselves, and grow into their authentic voices.
-                The message about voice as empowerment, especially in today's
-                cultural moment.
-              </p>
             </div>
           </div>
         </section>
@@ -410,38 +199,6 @@ Transform your marketing channels into a growth engine with Joey, an expert cont
           </div>
           <div class="linkedin-wrapper">
             <iframe
-              src="https://www.linkedin.com/embed/feed/update/urn:li:share:7338261311597797377?collapsed=1"
-              width="100%"
-              frameborder="0"
-              allowfullscreen=""
-              title="Embedded post"
-              style="min-height: 600px"
-            ></iframe>
-          </div>
-        </section>
-        <section class="section cols-3 social-gallery">
-          <div class="linkedin-wrapper">
-            <iframe
-              src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7335745545191190529?collapsed=1"
-              width="100%"
-              frameborder="0"
-              allowfullscreen=""
-              title="Embedded post"
-              style="min-height: 600px"
-            ></iframe>
-          </div>
-          <div class="linkedin-wrapper">
-            <iframe
-              src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7338631713884938240?collapsed=1"
-              width="100%"
-              frameborder="0"
-              allowfullscreen=""
-              title="Embedded post"
-              style="min-height: 600px"
-            ></iframe>
-          </div>
-          <div class="linkedin-wrapper">
-            <iframe
               src="https://www.linkedin.com/embed/feed/update/urn:li:share:7340440851942199298?collapsed=1"
               width="100%"
               frameborder="0"
@@ -453,21 +210,32 @@ Transform your marketing channels into a growth engine with Joey, an expert cont
         </section>
       </div>
     </div>
-    <footer class="site-footer">
-      <span>Message me on LinkedIn!</span>
-      <a
-        href="https://www.linkedin.com/in/joeyazoulai"
-        class="footer-linkedin"
-        target="_blank"
-        rel="noopener"
-        aria-label="LinkedIn"
-      >
-        <img
-          src="assets/icons/linkedin-brand.svg"
-          alt="LinkedIn Icon"
-          class="footer-icon"
-        />
-      </a>
-    </footer>
+    <section id="about-section" class="section cols-3">
+      <div class="text-section">
+        <div class="description">
+          <h3>You get a partner you can call on.</h3>
+          <p>
+A few years ago <span>I worked at a digital agency as the Director of Media & Content</span>. My team bridged the marketing and programmatic needs for clients like Harvard Law, Bridgespan, and Microsoft. But <span>my favorite clients were usually the scrappy nonprofits on a budget</span>.</p>
+<p>Now that I am out on my own, my focus is on making impactful media accessible to organizations of all sizes. I also teach the next generation of media and technology experts at NYU and Columbia. <span>I am always learning and always sharing what I learn</span>. Join me!</p>
+         
+        </div>
+      </div>
+      <div class="media-section">
+        <div class="media-wrapper aspect-ratio-1-1">
+          <img
+            src="https://azoulai.s3.us-east-2.amazonaws.com/joey.jpg"
+            alt="Uptown Stories Social Media Campaign"
+          />
+        </div>
+      </div>
+      <div class="text-section">
+        <div class="description">
+          <h4>Questions?</h4>
+          <p>
+            <a href="https://www.linkedin.com/in/joeyazoulai/">Message</a> me on LinkedIn or <a href="https://cal.com/joeyazoulai/open">schedule</a> a call.
+          </p>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
