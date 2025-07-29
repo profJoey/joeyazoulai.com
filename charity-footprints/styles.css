@@ -21,8 +21,11 @@ body {
 
 body,
 .video-wrapper,
-.media-wrapper, .purchase-details {
+.media-wrapper {
   background-color: #161616;
+}
+.purchase-details {
+  background-color: rgba(22, 22, 22, 0.8);
 }
 .offer-section {
   margin: 0;
@@ -100,7 +103,6 @@ h4 {
   display: grid;
   gap: 1rem;
   align-items: stretch;
-  margin-bottom: 6rem;
   width: 100%;
   min-height: 90vh;
 }
@@ -441,8 +443,15 @@ ul.checkmark-list li::before {
   body {
     padding: 0 2rem;
   }
+  .section {
+      margin-bottom: 20vh;
+  }
+ .buy-btn .button-text {
+    font-size: 1.5rem;
+  }
   .offer-section {
     margin: 0;
+    margin-bottom: 20vh;
     position: relative;
     width: 100%;
     height: 100%;
@@ -474,13 +483,13 @@ ul.checkmark-list li::before {
   }
   .testimonial {
     flex-direction: column;
-    margin-left: 0;
+    margin: 5vh 0 10vh 0;
   }
   .client-intro {
     align-items: center;
   }
   .client-image {
-    width: 25vw;
+    width: 40vw;
     margin-bottom: 1rem;
   }
   .client-quote {
