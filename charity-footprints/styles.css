@@ -33,10 +33,7 @@ p {
   box-sizing: border-box;
 }
 
-body,
-.video-wrapper {
-  background-color: #0b0d0c;
-}
+
 
 h2 {
   font-family: "Mooli", sans-serif;
@@ -766,6 +763,181 @@ a.portfolio-heading:active {
   font-size: 1.2rem;
   line-height: 1.5rem;
 }
+
+      body {
+        
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Lato", sans-serif;
+        color: #d3d3d3;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      .content-grid {
+        margin: 0;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 60vw 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+          "header header"
+          "video description"
+          "testimonial .";
+      }
+      .hero-video {
+        grid-area: video;
+        width: 100%;
+        height: auto;
+        transform: scale(2);
+        transform-origin: center;
+      }
+      .hero-text {
+        grid-area: header;
+        margin: 0;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 6rem;
+        color: #d3d3d3;
+        font-family: "Lato", sans-serif;
+        font-weight: 700;
+        font-style: italic;
+        line-height: 1.2;
+        text-align: left;
+        text-align: center;
+      }
+      .hero-description {
+        grid-area: description;
+        align-self: start;
+        justify-self: start;
+        margin-top: 3rem;
+        margin-right: 8rem;
+      }
+      .hero-description h3 {
+        font-size: 1.75rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+        color: #d9ca7e;
+      }
+      .hero-description h3 span {
+        /* text-decoration: underline; */
+      }
+      .hero-description p {
+        font-weight: 400;
+        font-size: 1.25rem;
+        line-height: 1.5;
+      }
+      .hero-description p span {
+        font-style: italic;
+      }
+      .testimonial {
+        grid-area: testimonial;
+        align-self: end;
+        display: flex;
+        margin-left: 4rem;
+      }
+      .client-intro {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+      }
+      .client-image {
+        width: 12vw;
+        height: auto;
+      }
+      .client-image img {
+        width: 100%;
+        height: auto;
+        border: 1px solid #d9ca7e;
+        border-radius: 8px;
+        display: block;
+        object-fit: contain;
+      }
+      .client-quote {
+        font-weight: 300;
+        margin-left: 2rem;
+        font-style: italic;
+      }
+      .client-quote p {
+        font-style: italic;
+      }
+      .client-lower-third {
+        font-weight: 500;
+      }
+      .large-quotation-mark {
+        font-size: 4rem;
+        margin-top: 0.5rem;
+      }
+      .client-quote h4 {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-weight: 300;
+      }
+      .purchase-details {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 15rem;
+        margin: 0rem 2rem 2rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem .75rem;
+        background-color: rgba(11, 13, 12, 0.7);
+        border-radius: 8px;
+      }
+
+      .purchase-details .full-price {
+        font-size: 3rem;
+        color: #d9ca7e;
+        font-weight: 700;
+        line-height: 2rem;
+        text-decoration-line: line-through;
+      }
+      .purchase-details .discount-price {
+        color: #d3d3d3;
+        font-size: 2rem;
+        line-height: 2rem;
+      }
+      .purchase-details .promo-text {
+        text-align: center;
+        margin-top: 0.25rem;
+        margin-bottom: 1.25rem;
+      }
+      .purchase-details > * {
+        display: block;
+      }
+      .buy-btn {
+        font-family: "Lato", sans-serif;
+        font-weight: 700;
+        padding: 10px 20px;
+        background-color: #d9ca7e;
+        color: #0b0d0c;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .buy-btn .button-text {
+        display: block;
+        font-size: 2rem;
+      }
+      .buy-btn .button-subtext {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 400;
+        margin-top: 0.25rem;
+      }
+
+      body, .video-wrapper, .media-wrapper {
+        background-color: #161616;
+      }
 /* ============= */
 /* Media Queries */
 /* ============= */
