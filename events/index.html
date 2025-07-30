@@ -39,7 +39,7 @@
         padding: 0;
         display: flex;
         box-sizing: border-box;
-        width: 100vw;
+        width: 100%;
         margin: 0;
         height: auto;
         font-family: "Lato", sans-serif;
@@ -135,6 +135,68 @@
       }
       .event-host {
         grid-area: event-host;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 3rem;
+      }
+      .event-host img {
+        width: auto;
+        height: 30vh;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        border: 1px solid #c0b27a;
+      }
+      .event-footer {
+        width: 100%;
+        height: 20vh;
+        background-color: #c0b27a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #1a1a1a;
+      }
+      .event-footer p {
+        font-weight: 400;
+      }
+      .event-footer a {
+        color: #1a1a1a;
+        font-weight: 700;
+      }
+      a.important-link {
+        color: #a01414;
+        font-weight: 700;
+      }
+      @media (max-width: 768px) {
+        .event-section {
+            width: 95%;
+            margin: 0 2rem;
+          grid-template-columns: 1fr;
+          grid-template-rows: auto;
+          grid-template-areas:
+          "event-title"
+          "event-media"
+          "event-details"
+          "event-form"
+          "event-description"
+          "event-host";
+        }
+        .event-media {
+    flex-direction: column;
+    height: auto;
+  }
+  .event-media img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+  #map {
+    margin-left: 0;
+    margin-top: 1rem;
+    height: 30vh;
+    width: 100%;
+  }
       }
     </style>
   </head>
@@ -143,9 +205,8 @@
       <div class="event-title">
         <h1 class="hero-text">You're Invited!</h1>
         <h2>
-          How Nonprofit EDs Nurture a 
-          "Media Capture Culture"
-          in their Organizations
+          How Nonprofit EDs Nurture a "Media Capture Culture" in their
+          Organizations
         </h2>
       </div>
 
@@ -173,7 +234,10 @@
         </form>
       </div>
       <div class="event-description">
-        <h3>You lead a nonprofit,<br> not a media organization.</h3>
+        <h3>
+          You lead a nonprofit,<br />
+          not a media organization.
+        </h3>
         <p>
           The problem is that getting the attention from funders, donors and
           volunteers in our attention economy means creating a constant stream
@@ -191,8 +255,42 @@
         />
         <div id="map"></div>
       </div>
+      <div class="event-host">
+        <h3>Hosted by: Joey Azoulai</h3>
+        <img
+          src="https://azoulai.s3.us-east-2.amazonaws.com/joey.jpg"
+          alt="Joey Azoulai"
+          class="image-sample"
+        />
+        <p>
+          As a former Director of Media & Content for a digital agency, my team
+          and I bridged the marketing and programmatic needs for clients like
+          Harvard Law, Bridgespan, and Microsoft. But
+          <span
+            >my favorite clients were usually the scrappy nonprofits on a
+            budget</span
+          >.
+        </p>
+        <p>
+          Now that I am out on my own, my focus is on making impactful media
+          accessible to organizations of all sizes. I also teach the next
+          generation of media and technology experts at NYU and Columbia.
+          <span>I am always learning and always sharing what I learn</span>.
+          Join me!
+        </p>
+      </div>
     </div>
-
+    <div class="event-footer">
+      <p>
+        Feel free to
+        <a href="https://www.linkedin.com/in/joeyazoulai/">Message me</a> on
+        LinkedIn, <a href="https://cal.com/joeyazoulai/open">schedule</a> a
+        call, or
+        <a class="important-link" href="https://joeyazoulai.com"
+          >visit my website.</a
+        >
+      </p>
+    </div>
     <script type="text/javascript">
       document
         .getElementById("emailForm")
