@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
       promoText.classList.add("charity-footprints");
     }
     if (discountPrice) {
+      discountPrice.innerHTML = "$380";
       discountPrice.classList.add("charity-footprints");
     }
     if (fullPrice) {
