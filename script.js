@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (subText) {
       subText.innerHTML = "Pay $380 Deposit";
-
     }
   }
 
