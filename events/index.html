@@ -64,8 +64,11 @@
         grid-area: event-title;
         text-align: center;
         font-size: 3rem;
-        width: auto;
+        max-width: 700px;
         margin-bottom: 4vh;
+      }
+      .event-title h2 {
+        font-size: 2rem;
       }
       .event-form {
         grid-area: event-form;
@@ -80,28 +83,40 @@
         text-align: center;
         margin-bottom: 0.5rem;
         font-weight: bold;
+        margin-top: 1rem;
       }
       .event-form input {
         width: 100%;
         height: 2rem;
-        padding: .5rem 1rem;
+        padding: 0.5rem 1rem;
         border: 1px solid #ccc;
         border-radius: 4px;
       }
       .event-description {
         grid-area: event-description;
         max-width: 600px;
+        margin-top: 2rem;
+      }
+      .event-description h3 {
+        text-align: center;
+        font-size: 2rem;
+        margin-top: 1rem;
       }
       .event-details {
         grid-area: event-details;
-        margin-bottom: 1ccrem;
       }
-      .event-details h3 {
+      .event-details-list {
+        list-style: none;
+        margin-left: 0;
+        padding-inline-start: 0;
+      }
+      label {
         color: #c0b27a;
         font-size: 1.5rem;
       }
       .event-details ul {
         list-style: none;
+        margin-left: 0;
       }
       .event-media {
         grid-area: event-media;
@@ -126,20 +141,25 @@
   <body class="event">
     <div class="event-section">
       <div class="event-title">
-        How to Nurture a<br> "Media Capture Culture"<br> in Your Organization
+        <h1 class="hero-text">You're Invited!</h1>
+        <h2>
+          How Nonprofit EDs Nurture a 
+          "Media Capture Culture"
+          in their Organizations
+        </h2>
       </div>
 
       <div class="event-details">
-        <h3>Join us at NYU's Brooklyn Campus!</h3>
-        <ul>
-          <li>Date: September 20, 2025</li>
-          <li>Time: 5:00 PM - 7:00 PM</li>
-          <li>Location: NYU's Brooklyn Campus</li>
-          <li>Address: 370 Jay Street, Fl 5</li>
+        <h3>Event Details:</h3>
+        <ul class="event-details-list">
+          <li>September 20, 2025</li>
+          <li>5:00 PM - 7:00 PM</li>
+          <li>370 Jay St. Downtown Brooklyn</li>
         </ul>
       </div>
       <div class="event-form">
         <form id="emailForm">
+          <label for="email">Join us at NYU's Brooklyn Campus! </label>
           <input
             type="email"
             id="email"
@@ -153,7 +173,7 @@
         </form>
       </div>
       <div class="event-description">
-        <h3>You lead a nonprofit, not a media organization.</h3>
+        <h3>You lead a nonprofit,<br> not a media organization.</h3>
         <p>
           The problem is that getting the attention from funders, donors and
           volunteers in our attention economy means creating a constant stream
