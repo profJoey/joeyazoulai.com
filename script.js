@@ -20,11 +20,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const fullPrice = document.querySelector(".full-price");
     const removableLineItem = document.querySelector(".removable-line-item");
     const charityLineItem = document.querySelector("li.charity-footprints");
+    const subText = document.querySelector(".button-subtext");
     if (promoText) {
       promoText.classList.add("charity-footprints");
     }
     if (discountPrice) {
-      discountPrice.innerHTML = "$380";
       discountPrice.classList.add("charity-footprints");
     }
     if (fullPrice) {
@@ -35,6 +35,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (charityLineItem) {
       charityLineItem.classList.add("charity-footprints");
+    }
+    if (subText) {
+      subText.innerHTML = "Pay $380 Deposit";
+
     }
   }
 
