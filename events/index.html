@@ -17,26 +17,6 @@
     <!-- Styles -->
     <link rel="stylesheet" href="../styles.css" />
 
-    <!-- Scripts -->
-    <script src="../script.js" defer></script>
-    <style>
-      body {
-        background-color: #161616;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        margin: 0;
-        padding: 0 3rem;
-        box-sizing: border-box;
-        min-height: 100vh;
-        max-width: 100vw;
-        font-family: "Lato", sans-serif;
-        color: #d3d3d3;
-        font-size: 16px;
-      }
-    </style>
-
     <!-- EmailJS -->
     <script
       type="text/javascript"
@@ -49,13 +29,149 @@
         });
       })();
     </script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v3.14.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.14.0/mapbox-gl.js"></script>
+    <style>
+      body.event {
+        padding: 0;
+        display: flex;
+        box-sizing: border-box;
+        width: 100vw;
+        margin: 0;
+        height: auto;
+        font-family: "Lato", sans-serif;
+        color: #d3d3d3;
+        font-size: 16px;
+      }
+      .event-section {
+        width: 80%;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(7, auto);
+        grid-template-areas:
+          "event-title event-title"
+          "event-media event-media"
+          "event-details event-form"
+          "event-description event-description"
+          "event-host event-host";
+      }
+      .event-title {
+        grid-area: event-title;
+        text-align: center;
+        font-size: 3rem;
+        width: auto;
+        margin-bottom: 4vh;
+      }
+      .event-form {
+        grid-area: event-form;
+      }
+      .event-form form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .event-form label {
+        display: block;
+        text-align: center;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+      }
+      .event-form input {
+        width: 100%;
+        height: 2rem;
+        padding: .5rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .event-description {
+        grid-area: event-description;
+        max-width: 600px;
+      }
+      .event-details {
+        grid-area: event-details;
+        margin-bottom: 1ccrem;
+      }
+      .event-details h3 {
+        color: #c0b27a;
+        font-size: 1.5rem;
+      }
+      .event-details ul {
+        list-style: none;
+      }
+      .event-media {
+        grid-area: event-media;
+        display: flex;
+        width: 100%;
+        height: 35vh;
+      }
+      .event-media img {
+        height: 100%;
+        width: auto;
+      }
+      #map {
+        margin-left: 1rem;
+        width: 100%;
+        height: 100%;
+      }
+      .event-host {
+        grid-area: event-host;
+      }
+    </style>
   </head>
-  <body>
-    <form id="emailForm">
-      <label for="email">Enter your email address:</label>
-      <input type="email" id="email" name="user_email" required />
-      <button type="submit">Send Email</button>
-    </form>
+  <body class="event">
+    <div class="event-section">
+      <div class="event-title">
+        How to Nurture a<br> "Media Capture Culture"<br> in Your Organization
+      </div>
+
+      <div class="event-details">
+        <h3>Join us at NYU's Brooklyn Campus!</h3>
+        <ul>
+          <li>Date: September 20, 2025</li>
+          <li>Time: 5:00 PM - 7:00 PM</li>
+          <li>Location: NYU's Brooklyn Campus</li>
+          <li>Address: 370 Jay Street, Fl 5</li>
+        </ul>
+      </div>
+      <div class="event-form">
+        <form id="emailForm">
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            name="user_email"
+            required
+          />
+          <button class="buy-btn" type="submit">
+            <span class="button-text">Get Your Invite</span>
+          </button>
+        </form>
+      </div>
+      <div class="event-description">
+        <h3>You lead a nonprofit, not a media organization.</h3>
+        <p>
+          The problem is that getting the attention from funders, donors and
+          volunteers in our attention economy means creating a constant stream
+          of media. To be successful, your marketing and communications team
+          needs support from the entire organization. Find out how EDs are
+          providing that support by creating a culture of media capture and
+          sharing.
+        </p>
+      </div>
+      <div class="event-media">
+        <img
+          src="https://azoulai.s3.us-east-2.amazonaws.com/370-Jay-Horizontal-2.jpg"
+          alt="NYU Brooklyn Campus"
+          class="image-sample"
+        />
+        <div id="map"></div>
+      </div>
+    </div>
 
     <script type="text/javascript">
       document
@@ -76,6 +192,15 @@
             }
           );
         });
+    </script>
+    <script>
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoicmljaGtuaWNrZXJib2NrZXIiLCJhIjoiY2t4MHN6eHdmMThhNzJvbXhkZ3I4YXIycCJ9.gOf89ht_pGXklZzNHfkb8g";
+      const map = new mapboxgl.Map({
+        container: "map", // container ID
+        center: [-73.98748911912367, 40.693240353422574],
+        zoom: 15,
+      });
     </script>
   </body>
 </html>
