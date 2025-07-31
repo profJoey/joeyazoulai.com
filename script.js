@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (buyButton) {
     buyButton.addEventListener("click", function () {
-      console.log("Buy button clicked");
+      fathom.trackEvent("buy-button-click");
       window.location.href = "https://buy.stripe.com/cNibJ12gcdsmd4t5709fW04";
     });
   } else {
