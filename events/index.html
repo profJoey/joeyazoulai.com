@@ -17,6 +17,14 @@
     <!-- Styles -->
     <link rel="stylesheet" href="../styles.css" />
 
+    <!-- Fathom -->
+    <script
+      src="https://cdn.usefathom.com/script.js"
+      data-site="ESHIBGXW"
+      defer
+    ></script>
+    <!-- / Fathom -->
+    
     <!-- EmailJS -->
     <script
       type="text/javascript"
@@ -219,7 +227,7 @@
         </ul>
       </div>
       <div class="event-form">
-        <form id="emailForm">
+        <form id="emailForm" onsubmit="fathom.trackEvent('email-form-submit-events');">
           <label for="email">Join us at NYU's Brooklyn Campus! </label>
           <input
             type="email"
@@ -283,10 +291,10 @@
     <div class="event-footer">
       <p>
         Feel free to
-        <a href="https://www.linkedin.com/in/joeyazoulai/">Message me</a> on
-        LinkedIn, <a href="https://cal.com/joeyazoulai/open">schedule</a> a
+        <a href="https://www.linkedin.com/in/joeyazoulai/" onclick="fathom.trackEvent('events-linkedin-message-click');">Message me</a> on
+        LinkedIn, <a href="https://cal.com/joeyazoulai/open" onclick="fathom.trackEvent('events-schedule-call-click');">schedule</a> a
         call, or
-        <a class="important-link" href="https://joeyazoulai.com"
+        <a class="important-link" href="https://joeyazoulai.com" onclick="fathom.trackEvent('events-visit-website-click');"
           >visit my website.</a
         >
       </p>
