@@ -59,7 +59,7 @@ if (urlParams.has("charity-footprints")) {
   }
   if (purchaseDetails) {
     purchaseDetails.innerHTML = `
-        <button id="msg-me-btn" class="buy-btn" onclick="window.location.href='https://www.linkedin.com/in/joeyazoulai/'; trackEvent('linkedin-message-click');">
+        <button id="msg-me-btn" class="buy-btn" onclick="window.location.href='https://www.linkedin.com/in/joeyazoulai/'; trackEvent('portfolio-linkedin-message-click');">
           <div class="buy-btn-text">
             <img style="width: 4rem; height: auto; border-radius: 8px;"
               src="https://azoulai.s3.us-east-2.amazonaws.com/joey.jpg"
