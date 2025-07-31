@@ -54,25 +54,27 @@ document.addEventListener("DOMContentLoaded", function () {
   );
   // Initialize players with proper options for reliable autoplay
   const players = allIframes.map((iframe) => {
-    // Create mute button for each video
-    const muteButton = document.createElement("button");
-    muteButton.className = "mute-button";
-    muteButton.innerHTML = `${unmuteIcon} <span>Unmute</span>`;
-    iframe.parentElement.appendChild(muteButton);
+    // Create mute button for each video (except vimeo5 which has controls)
+    if (iframe.id !== 'vimeo5') {
+      const muteButton = document.createElement("button");
+      muteButton.className = "mute-button";
+      muteButton.innerHTML = `${unmuteIcon} <span>Unmute</span>`;
+      iframe.parentElement.appendChild(muteButton);
+    }
 
     const options = {
-      muted: true,
+      muted: iframe.id === 'vimeo5' ? false : true, // vimeo5 starts unmuted
       loop: true,
       autopause: false,
       background: false,
       playsinline: true,
-      controls: false,
+      controls: iframe.id === 'vimeo5' ? true : false, // Only vimeo5 has controls
       title: false,
       byline: false,
       portrait: false,
     };
 
-    // Modify URL parameters for autoplay videos
+    // Modify URL parameters for autoplay videos (but not vimeo5)
     if (iframe.classList.contains("autoplay-video")) {
       let src = new URL(iframe.src);
       src.searchParams.set("autoplay", "1");
@@ -190,8 +192,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const idx = allIframes.indexOf(entry.target);
       if (entry.intersectionRatio >= 0.8) {
         entry.target.classList.add("in-view");
-        // FIX: Restart video when it comes back into view
-        if (idx !== -1) {
+        // FIX: Restart video when it comes back into view (but not vimeo5)
+        if (idx !== -1 && entry.target.id !== 'vimeo5') {
           players[idx]
             .play()
             .then(() => {
@@ -207,8 +209,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       } else {
         entry.target.classList.remove("in-view");
-        // Mute videos when they leave viewport
-        if (idx !== -1) {
+        // Mute videos when they leave viewport (but not vimeo5)
+        if (idx !== -1 && entry.target.id !== 'vimeo5') {
           players[idx]
             .pause()
             .then(() => {
@@ -230,26 +232,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
   allIframes.forEach((iframe, index) => {
     observer.observe(iframe);
-    // Add mute button click handler for all videos
-    const muteButton = iframe.parentElement.querySelector(".mute-button");
-    if (muteButton) {
-      muteButton.addEventListener("click", async () => {
-        try {
-          const muted = await players[index].getMuted();
-          if (muted) {
-            await players[index].setMuted(false);
-            await players[index].setVolume(1.0);
-          } else {
-            await players[index].setMuted(true);
-            await players[index].setVolume(0);
+    // Add mute button click handler for all videos except vimeo5
+    if (iframe.id !== 'vimeo5') {
+      const muteButton = iframe.parentElement.querySelector(".mute-button");
+      if (muteButton) {
+        muteButton.addEventListener("click", async () => {
+          try {
+            const muted = await players[index].getMuted();
+            if (muted) {
+              await players[index].setMuted(false);
+              await players[index].setVolume(1.0);
+            } else {
+              await players[index].setMuted(true);
+              await players[index].setVolume(0);
+            }
+            updateMuteButtonUI(players[index], muteButton);
+          } catch (error) {
+            console.error("Error toggling mute state:", error);
           }
-          updateMuteButtonUI(players[index], muteButton);
-        } catch (error) {
-          console.error("Error toggling mute state:", error);
-        }
-      });
-      // Initial sync
-      updateMuteButtonUI(players[index], muteButton);
+        });
+        // Initial sync
+        updateMuteButtonUI(players[index], muteButton);
+      }
     }
   });
 
