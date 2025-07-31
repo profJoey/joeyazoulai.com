@@ -291,8 +291,8 @@
     <div class="event-footer">
       <p>
         Feel free to
-        <a href="https://www.linkedin.com/in/joeyazoulai/" onclick="fathom.trackEvent('events-linkedin-message-click');">Message me</a> on
-        LinkedIn, <a href="https://cal.com/joeyazoulai/open" onclick="fathom.trackEvent('events-schedule-call-click');">schedule</a> a
+        <a href="https://www.linkedin.com/in/joeyazoulai/" onclick="trackEvent('events-linkedin-message-click');">Message me</a> on
+        LinkedIn, <a href="https://cal.com/joeyazoulai/open" onclick="trackEvent('events-schedule-call-click');">schedule</a> a
         call, or
         <a class="important-link" href="https://joeyazoulai.com" onclick="fathom.trackEvent('events-visit-website-click');"
           >visit my website.</a
@@ -304,6 +304,8 @@
         .getElementById("emailForm")
         .addEventListener("submit", function (event) {
           event.preventDefault(); // Prevent default form submission
+
+          trackEvent("events-form-submit");
 
           var emailParams = {
             user_email: document.getElementById("email").value,
