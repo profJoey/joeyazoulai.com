@@ -1,4 +1,17 @@
 /* MAIN SECTION START */
+body > * {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+body.ready > * {
+  opacity: 1;
+}
+
+body.ready {
+  transition: transform 0.3s ease-in-out;
+}
+
 body {
   display: flex;
   flex-direction: column;
