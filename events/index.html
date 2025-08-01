@@ -24,7 +24,7 @@
       defer
     ></script>
     <!-- / Fathom -->
-    
+
     <!-- EmailJS -->
     <script
       type="text/javascript"
@@ -53,7 +53,6 @@
         font-family: "Lato", sans-serif;
         color: #d3d3d3;
         font-size: 16px;
-        
       }
       body.event > * {
         opacity: 1;
@@ -180,35 +179,38 @@
         color: #a01414;
         font-weight: 700;
       }
+      p {
+        line-height: 1.5;
+      }
       @media (max-width: 768px) {
         .event-section {
-            width: 95%;
-            margin: 0 2rem;
+          width: 95%;
+          margin: 0 2rem;
           grid-template-columns: 1fr;
           grid-template-rows: auto;
           grid-template-areas:
-          "event-title"
-          "event-media"
-          "event-details"
-          "event-form"
-          "event-description"
-          "event-host";
+            "event-title"
+            "event-media"
+            "event-details"
+            "event-form"
+            "event-description"
+            "event-host";
         }
         .event-media {
-    flex-direction: column;
-    height: auto;
-  }
-  .event-media img {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-  }
-  #map {
-    margin-left: 0;
-    margin-top: 1rem;
-    height: 30vh;
-    width: 100%;
-  }
+          flex-direction: column;
+          height: auto;
+        }
+        .event-media img {
+          width: 100%;
+          height: auto;
+          max-width: 100%;
+        }
+        #map {
+          margin-left: 0;
+          margin-top: 1rem;
+          height: 30vh;
+          width: 100%;
+        }
       }
     </style>
   </head>
@@ -231,7 +233,10 @@
         </ul>
       </div>
       <div class="event-form">
-        <form id="emailForm" onsubmit="fathom.trackEvent('email-form-submit-events');">
+        <form
+          id="emailForm"
+          onsubmit="fathom.trackEvent('email-form-submit-events');"
+        >
           <label for="email">Join us at NYU's Brooklyn Campus! </label>
           <input
             type="email"
@@ -240,8 +245,17 @@
             name="user_email"
             required
           />
-          <button class="buy-btn" type="submit">
-            <span class="button-text">Get Your Invite</span>
+
+          <button class="buy-btn" style="background-color: #DE4343;" type="submit">
+            <div class="buy-btn-text">
+              <img
+                src="https://azoulai.s3.us-east-2.amazonaws.com/icons/calendar_month_24dp_000_FILL0_wght400_GRAD0_opsz24.svg"
+                alt="Cart Icon"
+                class="cart-icon"
+              />
+              <span class="button-text">Get your invite!</span>
+            </div>
+            <span class="button-subtext">And emails about future events</span>
           </button>
         </form>
       </div>
@@ -252,8 +266,8 @@
         </h3>
         <p>
           The problem is that getting the attention from funders, donors and
-          volunteers in our attention economy means creating a constant stream
-          of media. To be successful, your marketing and communications team
+          volunteers means creating a constant stream
+          of media across multiple channels. To be successful, your marketing and communications team
           needs support from the entire organization. Find out how EDs are
           providing that support by creating a culture of media capture and
           sharing.
@@ -275,6 +289,10 @@
           class="image-sample"
         />
         <p>
+          Hey, thanks for dropping by! I'm Joey, a Digital Content Strategist and Video Producer, specializing in nonprofit marketing and digital education. As a former Director of Media & Content, I collaborated with prestigious clients such as Harvard Law, Bridgespan, Microsoft, and Goodwill Industries. Now I am out on my own and helping <span>make impactful media
+          accessible to organizations of all sizes</span>.
+        </p>
+        <!-- <p>
           As a former Director of Media & Content for a digital agency, my team
           and I bridged the marketing and programmatic needs for clients like
           Harvard Law, Bridgespan, and Microsoft. But
@@ -289,19 +307,29 @@
           generation of media and technology experts at NYU and Columbia.
           <span>I am always learning and always sharing what I learn</span>.
           Join me!
-        </p>
+        </p> -->
       </div>
     </div>
     <div class="event-footer">
       <p>
-        Feel free to
-        <a href="https://www.linkedin.com/in/joeyazoulai/" onclick="trackEvent('events-linkedin-message-click');">Message me</a> on
-        LinkedIn, <a href="https://cal.com/joeyazoulai/open" onclick="trackEvent('events-schedule-call-click');">schedule</a> a
-        call, or
-        <a class="important-link" href="https://joeyazoulai.com" onclick="fathom.trackEvent('events-visit-website-click');"
-          >visit my website.</a
-        >
+        Questions? Message me on
+        <a
+          href="https://www.linkedin.com/in/joeyazoulai/"
+          onclick="trackEvent('events-linkedin-message-click');"
+          >LinkedIn</a
+        >.
       </p>
+                <button class="buy-btn" style="margin-left: 2rem; background-color: #DE4343;" type="submit" onsubmit="trackEvent('events-website-click');">
+            <div class="buy-btn-text">
+              <img
+                src="https://azoulai.s3.us-east-2.amazonaws.com/icons/art_track_24dp_000_FILL0_wght400_GRAD0_opsz24.svg"
+                alt="Cart Icon"
+                class="cart-icon"
+              />
+              <span class="button-text">Visit my website</span>
+            </div>
+            <span class="button-subtext">To see examples of my work</span>
+          </button>
     </div>
     <script type="text/javascript">
       document

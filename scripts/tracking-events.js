@@ -26,11 +26,7 @@ const trackingEvents = {
     description: 'User clicked LinkedIn message button on events page',
     context: 'Contact attempt from events section'
   },
-  'events-schedule-call-click': {
-    description: 'User clicked schedule a call button on events page',
-    context: 'Contact attempt from events section'
-  },
-  'events-visit-website-click': {
+  'events-website-click': {
     description: 'User clicked visit website button on events page',
     context: 'Contact attempt from events section'
   }
