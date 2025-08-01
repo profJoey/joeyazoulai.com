@@ -10,6 +10,10 @@ const trackingEvents = {
     description: 'User visited with charity-footprints parameter',
     context: 'Special charity campaign landing'
   },
+  'kate-reuther-visit': {
+    description: 'User visited with kate-reuther parameter',
+    context: 'Kate Reuther specific content'
+  },
   'portfolio-visit': {
     description: 'User visited with portfolio parameter', 
     context: 'Portfolio mode viewing'

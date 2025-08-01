@@ -73,4 +73,27 @@ if (urlParams.has("charity-footprints")) {
         <span class="button-subtext">Message me on LinkedIn</span>
         `;
   }
-}
+} else if (urlParams.has("kate-reuther")) {
+  trackEvent("kate-reuther-visit");
+  const promoText = document.querySelector(".promo-text");
+  const discountPrice = document.querySelector(".discount-price");
+  const fullPrice = document.querySelector(".full-price");
+  const subText = document.querySelector(".button-subtext");
+
+  if (promoText) {
+    promoText.classList.add("kate-reuther");
+    promoText.innerHTML = `Use code KATE15 at<br />
+          checkout for 15% discount`;
+  }
+  if (discountPrice) {
+    discountPrice.classList.add("kate-reuther");
+  }
+  if (fullPrice) {
+    fullPrice.classList.add("kate-reuther");
+  }
+  
+  if (subText) {
+    subText.innerHTML = "Pay $380 Deposit";
+  }
+  
+} 

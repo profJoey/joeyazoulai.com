@@ -382,7 +382,7 @@ h4 {
   font-weight: 700;
   line-height: 2rem;
 }
-.full-price.charity-footprints {
+.full-price.charity-footprints, .full-price.kate-reuther {
   text-decoration-line: line-through;
 }
 .discount-price {
@@ -391,7 +391,7 @@ h4 {
   line-height: 2rem;
   display: none;
 }
-.discount-price.charity-footprints {
+.discount-price.charity-footprints, .discount-price.kate-reuther {
   display: inline-block;
 }
 .promo-text {
@@ -400,7 +400,7 @@ h4 {
   display: none;
 }
 
-.promo-text.charity-footprints {
+.promo-text.charity-footprints, .promo-text.kate-reuther {
   display: block;
 }
 
