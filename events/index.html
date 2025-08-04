@@ -42,6 +42,9 @@
       rel="stylesheet"
     />
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.14.0/mapbox-gl.js"></script>
+    <!-- <script src="../script.js"></script> -->
+    <script src="../scripts/tracking-events.js"></script>
+    <script src="../scripts/url-parameters.js"></script>
     <style>
       body.event {
         padding: 0;
@@ -334,6 +337,7 @@
         class="buy-btn"
         style="margin-left: 2rem; background-color: #de4343"
         type="submit"
+        onclick="window.open('https://joeyazoulai.com', '_blank');"
         onsubmit="trackEvent('events-website-click');"
       >
         <div class="buy-btn-text">
@@ -348,26 +352,70 @@
       </button>
     </div>
     <script type="text/javascript">
+      // document
+      //   .getElementById("emailForm")
+      //   .addEventListener("submit", function (event) {
+      //     event.preventDefault(); // Prevent default form submission
+
+      //     trackEvent("events-form-submit");
+
+      //     var emailParams = {
+      //       user_email: document.getElementById("email").value,
+      //     };
+
+      //     emailjs.send("service_8zrsopo", "template_g68y533", emailParams).then(
+      //       function (response) {
+      //         alert("SUCCESS!", response.status, response.text);
+      //       },
+      //       function (error) {
+      //         alert("FAILED...", error);
+      //       }
+      //     );
+      //   });
       document
-        .getElementById("emailForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault(); // Prevent default form submission
+  .getElementById("emailForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent default form submission
 
-          trackEvent("events-form-submit");
+    trackEvent("events-form-submit");
 
-          var emailParams = {
-            user_email: document.getElementById("email").value,
-          };
+    var emailParams = {
+      user_email: document.getElementById("email").value,
+    };
 
-          emailjs.send("service_8zrsopo", "template_g68y533", emailParams).then(
-            function (response) {
-              alert("SUCCESS!", response.status, response.text);
-            },
-            function (error) {
-              alert("FAILED...", error);
-            }
-          );
-        });
+    emailjs.send("service_8zrsopo", "template_g68y533", emailParams).then(
+      function (response) {
+        // Success: Update label and hide form elements
+        const label = document.querySelector("label[for='email']");
+        const emailInput = document.getElementById("email");
+        const submitButton = emailInput.parentElement.querySelector('.buy-btn');
+        
+        // Update label with success message
+        label.innerHTML = `
+          <span style="
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: block;
+            padding: 1rem;
+            background-color: rgba(76, 175, 80, 0.1);
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+            margin-top: 1rem;
+          ">
+            ✅ Received! Look out for an email soon!
+          </span>
+        `;
+        
+        // Hide form elements
+        emailInput.style.display = "none";
+        submitButton.style.display = "none";
+      },
+      function (error) {
+        alert("FAILED...", error);
+      }
+    );
+  });
     </script>
     <script>
       mapboxgl.accessToken =
