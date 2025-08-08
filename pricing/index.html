@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing | Joey Azoulai</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body.pricing {
+      background: #0b0d0c;
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+      padding: 0 3rem;
+    }
+    body.pricing > * {
+        opacity: 1;
+    }
+    .pricing-hero {
+      text-align: center;
+      margin: 4rem 0 2rem 0;
+    }
+    .pricing-hero h1 {
+      font-family: 'Mooli', sans-serif;
+      color: #d9ca7e;
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+    .pricing-hero p {
+      font-size: 1.25rem;
+      color: #fff;
+      margin-bottom: 2rem;
+    }
+    .pricing-table {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 4rem;
+    }
+    .pricing-card {
+      background: #fff;
+      color: #222;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      border: 1px solid #d9ca7e;
+      min-width: 270px;
+      max-width: 340px;
+      flex: 1 1 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1.5rem 2.5rem 1.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .pricing-card h2 {
+      font-family: 'Mooli', sans-serif;
+      color: #d9ca7e;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .pricing-card .price {
+      font-size: 2.2rem;
+      color: #0b0d0c;
+      font-weight: 900;
+      margin: 1rem 0 1.5rem 0;
+      font-family: 'Mooli', sans-serif;
+    }
+    .pricing-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
+      text-align: left;
+      width: 100%;
+    }
+    .pricing-card ul li {
+      margin-bottom: 0.7rem;
+      font-size: 1rem;
+      padding-left: 1.2em;
+      position: relative;
+    }
+    .pricing-card ul li:before {
+      content: '\2022';
+      color: #d9ca7e;
+      position: absolute;
+      left: 0;
+      font-size: 1.2em;
+      top: 0.1em;
+    }
+    .pricing-card .plan-label {
+      position: absolute;
+      top: -1.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #d9ca7e;
+      color: #0b0d0c;
+      font-family: 'Mooli', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.3rem 1.2rem;
+      border-radius: 999px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      letter-spacing: 0.02em;
+    }
+    .pricing-includes {
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
+      background: rgba(255,255,255,0.07);
+      border-radius: 8px;
+      padding: 1.5rem 2rem;
+      color: #fff;
+      font-size: 1.1rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      border: 1px solid #d9ca7e;
+    }
+    @media (max-width: 700px) {
+      body.pricing {
+        padding: 0 1rem;
+      }
+      .pricing-table {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+      }
+      .pricing-card {
+        min-width: 0;
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 1.5rem;
+      }
+      .pricing-includes {
+        padding: 1rem 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body class="pricing">
+  <div class="pricing-hero">
+    <h1>Build Your Content Library</h1>
+    <p>Choose a plan to grow your nonprofit's evergreen content and reach.</p>
+  </div>
+  <div class="pricing-includes">
+    <strong>All plans assume a 3-month term and include:</strong>
+    <ul>
+      <li>Develop Strategic Plan</li>
+      <li>Produce Interviews</li>
+      <li>Prototype Content</li>
+      <li>Pilot Plan</li>
+      <li>15 Evergreen content items (minimum)</li>
+    </ul>
+  </div>
+  <div class="pricing-table">
+    <div class="pricing-card">
+      <div class="plan-label">Starter</div>
+      <h2>Starter Plan</h2>
+      <div class="price">$2,000/mo.</div>
+      <ul>
+        <li>1 x Interview</li>
+        <li>5 x Videos</li>
+        <li>5 x Graphics</li>
+        <li>3 x Animated Gifs</li>
+        <li>2 x Carousels</li>
+        <li>15 Evergreen content items</li>
+      </ul>
+    </div>
+    <div class="pricing-card">
+      <div class="plan-label">Standard</div>
+      <h2>Standard Plan</h2>
+      <div class="price">$3,500/mo.</div>
+      <ul>
+        <li>3 x Interviews</li>
+        <li>12 x Videos</li>
+        <li>12 x Graphics</li>
+        <li>8 x Animated Gifs</li>
+        <li>6 x Carousels</li>
+        <li>40 Evergreen content items</li>
+        <li>Component asset library</li>
+        <li>Template library</li>
+      </ul>
+    </div>
+    <div class="pricing-card">
+      <div class="plan-label">Turn-key</div>
+      <h2>Turn-key Plan</h2>
+      <div class="price">$5,000/mo.</div>
+      <ul>
+        <li>Everything in the Standard Plan</li>
+        <li>All copywriting for the content library</li>
+        <li>Write 30 social media posts</li>
+        <li>Write 15 emails</li>
+        <li>Write 8 blog posts</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
